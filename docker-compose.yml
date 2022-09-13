@@ -1,0 +1,74 @@
+version: '3.9'
+services:
+  source:
+    image: postgressource
+    build:
+      context: ./source
+    entrypoint: ["echo", "Service postgresprepared disabled"]
+  postgrestest:
+    image: ${DOCKER_REGISTRY-}postgrestest
+    build:
+      context: ./testdb
+    container_name: postgres-test
+    networks:
+      static-network:
+        ipv4_address: 172.30.10.3
+    environment:
+      - DB_NAME=ieaccountinginusd      
+    volumes: 
+      - ./dc_postgres:/prj
+    depends_on:
+      - postgrestwo
+  postgresone:
+    image: ${DOCKER_REGISTRY-}postgresone
+    build:
+      context: ./master
+    restart: unless-stopped
+    container_name: postgres-master
+    networks:
+      static-network:
+        ipv4_address: 172.30.10.2
+    ports:
+      - '54321:5432'
+    environment:
+      - PG_CONFIG=/usr/local/bin/
+      - DB_NAME=ieaccountinginusd
+    expose:
+      # Opens port 5432 on the container
+      - '5432'
+      # Where our data will be persisted
+    volumes: 
+      - ./dc_postgres:/prj
+    depends_on:
+      - source
+  postgrestwo:
+    image: ${DOCKER_REGISTRY-}postgrestwo
+    build:
+      context: ./slave
+    restart: unless-stopped
+    container_name: postgres-slave
+    networks:
+      static-network:
+        ipv4_address: 172.30.10.4
+    ports:
+      - '54322:5432'
+    environment:
+      - DB_NAME=ieaccountinginusd      
+    expose:
+      - '5432'
+    volumes: 
+      - ./dc_postgres:/prj
+    depends_on:
+      - postgresone
+      - source
+networks:
+  static-network:
+    external: true
+    name: static-network
+#    ipam:
+#      config:
+#        - subnet: 172.30.10.0/28
+#        - gateway: 172.30.10.1
+volumes:
+  mariadb_data:
+    driver: local

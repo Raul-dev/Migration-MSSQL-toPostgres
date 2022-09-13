@@ -1,0 +1,2 @@
+пример последнего контейнера postgres
+https://github.com/docker-library/postgres/blob/56a1986772dd0f9488d54dccb82427c0db0b0599/14/alpine/Dockerfile
