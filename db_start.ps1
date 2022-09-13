@@ -25,11 +25,17 @@ if($IsRecompileImage){
 	docker rm postgres-master -f
 	docker rm postgres-slave -f
 }
-
 $ResultSearch = docker ps -a | Select-String -Pattern "postgres-test"
 if([string]::IsNullOrEmpty($ResultSearch)){
 	Write-Host "remove container postgres-test"
 	docker rm postgres-test
+}
+
+docker ps -a --filter "ancestor=postgresone" --format "{{.ID}}" | ForEach-Object {
+	docker rm $_
+}
+docker ps -a --filter "ancestor=postgressource" --format "{{.ID}}" | ForEach-Object {
+	docker rm $_
 }
 
 #Create dump script
@@ -88,7 +94,6 @@ if([string]::IsNullOrEmpty($ResultSearch)){
 }
 
 
-
 Write-Host $IsMaserOnly		
 if(-Not $IsMaserOnly){
 	Write-Host " docker-compose  start"
@@ -96,17 +101,17 @@ if(-Not $IsMaserOnly){
 	exit
 }
 
-exit
+
 
 $ResultSearch = docker image ls | Select-String -Pattern "postgressource"
 if([string]::IsNullOrEmpty($ResultSearch)){
 	cd source
-	docker build -f Dockerfile --rm -t postgressource .
+	docker build -f Dockerfile --rm -t postgressource . --progress=plain
 	cd ..
 
 }
 cd master
-docker build -f Dockerfile --rm -t postgresone .
+docker build -f Dockerfile --rm -t postgresone . --progress=plain
 cd ..
 # -d  -detach
 $Cmd = "docker run -i ${Opts} -e DB_NAME=ieaccountinginusd -e PG_CONFIG=/usr/local/bin/ --network static-network --ip 172.30.10.2 -p 54321:5432 -t --name postgres-master  postgresone:latest"

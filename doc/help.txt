@@ -1,2 +1,13 @@
-пример последнего контейнера postgres
+Last postgres container
 https://github.com/docker-library/postgres/blob/56a1986772dd0f9488d54dccb82427c0db0b0599/14/alpine/Dockerfile
+
+https://stackoverflow.com/questions/57158940/cannot-install-postgresql-extension-pg-repack
+https://akshay-bhadange.medium.com/rebuild-postgresql-database-using-pg-repack-1bd785e42077
+https://dba.stackexchange.com/questions/308520/how-to-install-pg-repack-in-postgresql
+
+
+Compiler not found 2 libraries:
+apk add lz4-dev
+apk add gawk
+
+not need #ENV PG_CONFIG=/usr/local/bin/pg_config 

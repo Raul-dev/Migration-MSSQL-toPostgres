@@ -1,9 +1,11 @@
-FROM cosmosdigital/postgres11.1-alpine3.8
+#FROM cosmosdigital/postgres11.1-alpine3.8
+FROM postgres:14-alpine
 ENV POSTGRES_USER postgres 
 ENV POSTGRES_PASSWORD postgres 
 ENV POSTGRES_DB postgres 
 ENV PG_REP_USER replica 
-ENV PG_REP_PASSWORD replica 
+ENV PG_REP_PASSWORD replica
+
 
 
 
@@ -15,15 +17,15 @@ RUN mkdir /prj &&\
 RUN apk add --update htop
 RUN apk add py3-setuptools &&\
 apk add --update py-pip &&\
-apk add postgresql-dev &&\
-pip install --upgrade pip 
+apk add postgresql-dev 
 
+RUN pip install --upgrade pip 
 RUN apk add alpine-sdk 
-
 RUN cat /proc/version
-
-RUN apk add zlib-dev 
-RUN pip install pgxnclient 
+RUN apk add zlib-dev
+RUN apk add lz4-dev 
+RUN apk add gawk
+RUN pip install pgxnclient
 RUN pgxn install pg_repack 
 
 
