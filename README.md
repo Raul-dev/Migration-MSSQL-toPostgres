@@ -79,8 +79,8 @@ cp /prj/postgresql-42.2.10.jar postgresql-42.2.10.jar &&\
 cp /prj/db.changelog.xml db.changelog.xml
 
 cd /dbupgrade
-liquibase --defaultsFile=/prj/liquibase.properties --url=jdbc:postgresql://172.30.10.2/iss_dev --changeLogFile=/dbupgrade/app/changelog/004_app_user.xml status
-liquibase --defaultsFile=/prj/liquibase.properties --url=jdbc:postgresql://172.30.10.2/iss_dev --changeLogFile=/dbupgrade/app/changelog/004_app_user.xml upgrade
+liquibase --defaultsFile=/prj/liquibase.properties --url=jdbc:postgresql://172.30.10.2/DatabaseName --changeLogFile=/dbupgrade/app/changelog/004_app_user.xml status
+liquibase --defaultsFile=/prj/liquibase.properties --url=jdbc:postgresql://172.30.10.2/DatabaseName --changeLogFile=/dbupgrade/app/changelog/004_app_user.xml upgrade
 ```
 
 # Backup and restor DB
