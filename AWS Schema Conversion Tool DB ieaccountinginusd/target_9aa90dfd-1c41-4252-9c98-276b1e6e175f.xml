@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <complex-attributes>
+        <type name="cursor">
+            <attr name="sql"></attr>
+            <attr name="spec-sql"></attr>
+        </type>
+        <type name="materialized-view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="view">
+            <attr name="oid-text"></attr>
+            <attr name="sql"></attr>
+        </type>
+        <type name="argument">
+            <attr name="anydata-value"></attr>
+        </type>
+        <type name="package">
+            <attr name="body-sql"></attr>
+            <attr name="spec-sql"></attr>
+            <attr name="init-sql"></attr>
+        </type>
+        <type name="function">
+            <attr name="sql"></attr>
+            <attr name="spec-sql"></attr>
+        </type>
+        <type name="column">
+            <attr name="column-expression"></attr>
+        </type>
+        <type name="trigger">
+            <attr name="description"></attr>
+            <attr name="sql"></attr>
+        </type>
+        <type name="procedure">
+            <attr name="sql"></attr>
+            <attr name="spec-sql"></attr>
+        </type>
+        <type name="type">
+            <attr name="body-sql"></attr>
+            <attr name="spec-sql"></attr>
+            <attr name="sql"></attr>
+        </type>
+        <type name="coll-type">
+            <attr name="sql"></attr>
+        </type>
+    </complex-attributes>
+    <metadata _I_D="194a63fe-4283-4fcc-ab0d-8d9c47860ff9" vendor="ORACLE" name="&lt;Oracle (virtual)&gt;" synthetic="true" metaStorageUuid="9aa90dfd-1c41-4252-9c98-276b1e6e175f"/>
+</tree>

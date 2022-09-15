@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <instances>
+        <operationStatistics>
+            <messageActionTemplates>
+                <messageActionTemplate severityType="CRITICAL" code="7833" description="AWS SCT can't convert the @@rowcount function in the current context" grouping-action-message="AWS SCT can't convert the @@rowcount function in the current context" actionItem="Convert your source code manually." estimatedTime="0.5" designTime="2.0" estimatedTimeMin="0.1" estimatedTimeMax="0.2" template-id="7833"/>
+                <messageActionTemplate severityType="HIGH" code="9997" description="Unable to resolve the object %s" grouping-action-message="Unable to resolve objects" actionItem="Verify if the unresolved object is present in the database. If it isn't, check the object name or add the object. If the object is present, transform the code manually." estimatedTime="0.3" designTime="0.0" estimatedTimeMin="0.3" estimatedTimeMax="0.3" template-id="9997"/>
+                <messageActionTemplate severityType="LOW" code="7915" description="Make sure that the constraint includes the %s column" grouping-action-message="Converted code might produce different results compared to the source code" actionItem="Review the converted code and change it where necessary." estimatedTime="0.01" designTime="0.0" estimatedTimeMin="0.1" estimatedTimeMax="0.1" template-id="7915"/>
+                <messageActionTemplate severityType="CRITICAL" code="7674" description="AWS SCT can't convert the %s clause of the %s statement" grouping-action-message="AWS SCT can't convert unknown clauses" actionItem="Convert your source code manually." estimatedTime="0.5" designTime="0.0" estimatedTimeMin="0.3" estimatedTimeMax="1.0" template-id="7674"/>
+                <messageActionTemplate severityType="CRITICAL" code="7811" description="PostgreSQL doesn't support the %s function" grouping-action-message="AWS SCT can't convert functions" actionItem="Review the converted code to make sure that the user-defined function produces the same results as the source code." estimatedTime="8.0" designTime="40.0" estimatedTimeMin="0.5" estimatedTimeMax="1.0" template-id="7811"/>
+                <messageActionTemplate severityType="CRITICAL" code="7708" description="AWS SCT can't convert the usage of the unsupported %s data type" grouping-action-message="AWS SCT can't convert the usage of an unsupported data type" actionItem="Convert your source code manually." estimatedTime="40.0" designTime="80.0" estimatedTimeMin="0.3" estimatedTimeMax="0.5" template-id="7708"/>
+                <messageActionTemplate severityType="LOW" code="7812" description="AWS SCT can't convert the CREATE TABLE statement. Make sure that you remove the temporary table before the end of the function" grouping-action-message="AWS SCT can't convert the CREATE TABLE statement. Make sure that you remove the temporary table before the end of the function" actionItem="Review the converted code and change it where necessary." estimatedTime="0.01" designTime="0.0" estimatedTimeMin="0.0" estimatedTimeMax="0.1" template-id="7812"/>
+                <messageActionTemplate severityType="LOW" code="7922" description="PostgreSQL uses a different approach to handle errors compared to the source code" grouping-action-message="PostgreSQL uses a different approach to handle errors compared to the source code" actionItem="Review the converted code and change it where necessary." estimatedTime="0.1" designTime="0.0" estimatedTimeMin="0.1" estimatedTimeMax="0.5" template-id="7922"/>
+                <messageActionTemplate severityType="LOW" code="7701" description="AWS SCT doesn't convert the FAST_FORWARD option because this is a default option for cursors in PostgreSQL" grouping-action-message="AWS SCT doesn't convert the FAST_FORWARD option because this is a default option for cursors in PostgreSQL" actionItem="Review the converted code to make sure that it produces the same results as the source code." estimatedTime="0.1" designTime="0.1" estimatedTimeMin="0.0" estimatedTimeMax="0.1" template-id="7701"/>
+                <messageActionTemplate severityType="CRITICAL" code="7774" description="AWS SCT can't convert arithmetic operations with mixed types of operands" grouping-action-message="AWS SCT can't convert arithmetic operations with mixed types of operands" actionItem="Revise your code to use cast operands to the expected type, and try again." estimatedTime="1.0" designTime="0.0" estimatedTimeMin="0.2" estimatedTimeMax="1.0" template-id="7774"/>
+                <messageActionTemplate severityType="LOW" code="7795" description="In PostgreSQL, string operations are case sensitive" grouping-action-message="In PostgreSQL, string operations are case sensitive" actionItem="Review the converted code to make sure that it compares strings correctly." estimatedTime="0.01" designTime="0.0" estimatedTimeMin="0.1" estimatedTimeMax="0.2" template-id="7795"/>
+                <messageActionTemplate severityType="HIGH" code="7679" description="AWS SCT replaced computed columns with triggers in the converted code" grouping-action-message="AWS SCT replaced computed columns with triggers in the converted code" actionItem="Review the converted code and change it where necessary." estimatedTime="0.1" designTime="0.0" estimatedTimeMin="0.0" estimatedTimeMax="0.1" template-id="7679"/>
+                <messageActionTemplate severityType="CRITICAL" code="7807" description="PostgreSQL does not support explicit transaction management commands such as BEGIN TRAN, SAVE TRAN in functions" grouping-action-message="AWS SCT can't convert the transaction management command" actionItem="Convert your source code manually." estimatedTime="0.5" designTime="40.0" estimatedTimeMin="0.2" estimatedTimeMax="1.0" template-id="7807"/>
+                <messageActionTemplate severityType="LOW" code="7837" description="Dynamic SQL statements in converted code might not work correctly" grouping-action-message="Dynamic SQL statements in converted code might not work correctly" actionItem="Review the converted code to make sure that dynamic SQL statements produce the same results as in the source code." estimatedTime="0.01" designTime="0.0" estimatedTimeMin="0.1" estimatedTimeMax="1.0" template-id="7837" linkToDocument="http://www.postgresql.org/docs/current/static/plpgsql-statements.html"/>
+                <messageActionTemplate severityType="CRITICAL" code="7672" description="PostgreSQL doesn't support EXECUTE statements that run a character string" grouping-action-message="PostgreSQL doesn't support EXECUTE statements that run a character string" actionItem="Convert your source code manually." estimatedTime="2.0" designTime="2.0" estimatedTimeMin="1.0" estimatedTimeMax="2.0" template-id="7672"/>
+                <messageActionTemplate severityType="HIGH" code="7938" description="AWS SCT can't convert OPTION clauses" grouping-action-message="AWS SCT can't convert OPTION clauses" actionItem="Convert your source code manually." estimatedTime="1.0" designTime="1.0" estimatedTimeMin="0.3" estimatedTimeMax="1.0" template-id="7938"/>
+            </messageActionTemplates>
+            <transformStatistic>
+                <OperationTransformStatistic transformed="2022-09-14 15:33:06">
+                    <OperationInfo IdOperation="3" valid="true" OperationType="Convert">
+                        <SourceNodesForTransform>
+                            <uuidnode uuid="cc284937-4d8d-4d48-9f4f-a44c84333cbf"/>
+                            <uuidnode uuid="9978da46-734c-42ff-9609-ce7b3554a68a"/>
+                            <uuidnode uuid="fe237fbc-b649-49ab-ae38-06428b7aaa9f"/>
+                            <uuidnode uuid="163c282b-ffa5-43a1-80c7-555eb5bd5632"/>
+                            <uuidnode uuid="c54f5194-136a-45c8-a003-4cf441f851a0"/>
+                            <uuidnode uuid="552bc927-f55c-4b1c-bb0f-450a9817bef8"/>
+                        </SourceNodesForTransform>
+                    </OperationInfo>
+                    <tableSourceNodesRelations/>
+                    <tableTargetNodesRelations/>
+                    <documentTransformStatistic>
+                        <conversionPair sourceMetaStorageUuid="378f1317-926e-4a98-8559-78d30812fbdb" targetMetaStorageUuid="3b80947c-1d6c-4841-a118-ddd3c5e29a7f">
+                            <treeNodeStatistic uuid="30b47d2a-7a2c-4c7b-804b-0950f47700a5"/>
+                            <treeNodeStatistic uuid="2fac87ee-af17-45d9-b546-96f470bd8d81" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="f62b6d22-8b73-4ade-a4f4-9ad494455ac2"/>
+                            <treeNodeStatistic uuid="679d418a-ed57-4b16-b45f-c2a1d0fe6252" countAllNodes="20"/>
+                            <treeNodeStatistic uuid="bb089090-c32d-42b7-81de-b279054f0eef" countAllNodes="533" countErrorNodes="3" countUniqueIdentifiersNodes="19">
+                                <messageActions sourceId="bb089090-c32d-42b7-81de-b279054f0eef" fullNameSource="Databases.IEAccountinginUSD.Schemas.upload.Procedures.upl_LoadXMLFromFile">
+                                    <MessageAction scrRange="135:160" parsableId="6baeffb6-a636-4c2c-97a7-fc280c545ce0" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="8" srcStartColumn="5" template-id="7674"/>
+                                    <MessageAction scrRange="309:318" parsableId="abf9795b-2455-4df9-b482-46a5bdc1ae62" arg1="sysobjects" scrLine="10" srcStartColumn="41" template-id="9997"/>
+                                    <MessageAction scrRange="326:327" parsableId="1b39614b-ee9a-40b3-95d6-b2905c2d9131" arg1="id" scrLine="10" srcStartColumn="58" template-id="9997"/>
+                                    <MessageAction scrRange="384:393" parsableId="bdb8f5e7-1c0a-47ac-a3f1-fdb79a795cfc" scrLine="11" srcStartColumn="15" template-id="7812"/>
+                                    <MessageAction scrRange="990:1000" parsableId="f9dcfe0e-5319-487d-b347-00fac2c93e33" arg1="sp_OACreate" scrLine="28" srcStartColumn="16" template-id="9997"/>
+                                    <MessageAction scrRange="1098:1114" parsableId="b6ea99ad-a6c2-4ba9-b59a-b490e6d5531f" arg1="sp_OAGetErrorInfo" scrLine="32" srcStartColumn="7" template-id="9997"/>
+                                    <MessageAction scrRange="1265:1276" parsableId="9c7896e5-ddc8-4aa8-85cb-fe1e901becbb" arg1="sp_OADestroy" scrLine="36" srcStartColumn="7" template-id="9997"/>
+                                    <MessageAction scrRange="1319:1334" parsableId="11cbc2f6-0b30-4db4-8387-907a2297a61f" arg1="sp_OASetProperty" scrLine="40" srcStartColumn="16" template-id="9997"/>
+                                    <MessageAction scrRange="1414:1430" parsableId="49f1c851-f6bb-4024-9c50-2328bb028e16" arg1="sp_OAGetErrorInfo" scrLine="44" srcStartColumn="7" template-id="9997"/>
+                                    <MessageAction scrRange="1581:1592" parsableId="e578a919-7db4-44d8-820e-b5eea382776b" arg1="sp_OADestroy" scrLine="48" srcStartColumn="7" template-id="9997"/>
+                                    <MessageAction scrRange="1671:1681" parsableId="08a7dc64-bd5c-42c0-ba51-e33e0f5b6a64" arg1="sp_OAMethod" scrLine="53" srcStartColumn="16" template-id="9997"/>
+                                    <MessageAction scrRange="1791:1807" parsableId="edc120fd-31f3-4a47-96f4-829246e83334" arg1="sp_OAGetErrorInfo" scrLine="57" srcStartColumn="7" template-id="9997"/>
+                                    <MessageAction scrRange="1958:1969" parsableId="47954633-f134-4b38-b1d2-7b8ed0112a75" arg1="sp_OADestroy" scrLine="61" srcStartColumn="7" template-id="9997"/>
+                                    <MessageAction scrRange="2036:2046" parsableId="e8786742-324f-4389-9d83-a6dc2ee444f8" arg1="sp_OAMethod" scrLine="66" srcStartColumn="16" template-id="9997"/>
+                                    <MessageAction scrRange="2143:2159" parsableId="05bd1244-3448-4122-8f80-38bb5cc0c0d9" arg1="sp_OAGetErrorInfo" scrLine="70" srcStartColumn="7" template-id="9997"/>
+                                    <MessageAction scrRange="2310:2321" parsableId="48f2d6f2-1d50-40a8-8a1e-68b5e504a84f" arg1="sp_OADestroy" scrLine="74" srcStartColumn="7" template-id="9997"/>
+                                    <MessageAction scrRange="2399:2410" parsableId="2150887e-09f8-4574-a36b-965cad34457c" arg1="sp_OADestroy" scrLine="79" srcStartColumn="6" template-id="9997"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="163c282b-ffa5-43a1-80c7-555eb5bd5632"/>
+                            <treeNodeStatistic uuid="e5a0b825-3987-423e-8f4c-182653ed38b2" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="908a4875-48c8-48db-b337-dfeac803a238"/>
+                            <treeNodeStatistic uuid="2e19101d-c2b7-44ab-8a4b-6ccea500a190"/>
+                            <treeNodeStatistic uuid="f0fdf861-38c7-469d-b99e-f975e3e2d5c1"/>
+                            <treeNodeStatistic uuid="136bcf58-9d18-4d65-a46f-dd0d988c2baf"/>
+                            <treeNodeStatistic uuid="d22ebeb4-75e2-4ac7-b821-cb0d8ef74275"/>
+                            <treeNodeStatistic uuid="da93d6b5-fe15-4d19-a904-e97205a62cee" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="3ddb3f58-0e64-4255-98f2-052116288b5c"/>
+                            <treeNodeStatistic uuid="10203afd-2cbd-4bd6-b082-e8ece98b2444" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="f06f91d4-02f8-4a01-bc30-916c7a2ebc27" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="2c33eac1-e6d2-4474-a25c-8165cd8682f3" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="e3f6530f-8abc-4421-9141-b0ff46563d95"/>
+                            <treeNodeStatistic uuid="6aa2ad74-37ce-4d14-a3be-563fc06352f7" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="a305a86d-b6a4-44b6-8b9b-61b9b14f1037"/>
+                            <treeNodeStatistic uuid="9ccf6da5-9a05-4386-b401-dc1710b8fe66" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="905178d8-e753-42a8-af26-bbfe9a78a3f3" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="3102dd51-96b4-478c-b1fd-71a2168b1d9d" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="6559283c-1b21-4112-a4df-8ac461580a31"/>
+                            <treeNodeStatistic uuid="86a7f181-41d6-4e0d-9e6e-57f38bc1d688"/>
+                            <treeNodeStatistic uuid="f46fa528-94d8-4a12-8e90-a3ae33b1c92b" countAllNodes="84" countUniqueIdentifiersNodes="7"/>
+                            <treeNodeStatistic uuid="312b0316-2de7-4dae-8415-6a0ea74ed50a"/>
+                            <treeNodeStatistic uuid="2b687183-81b4-49d1-92f1-5279ad1cab2b"/>
+                            <treeNodeStatistic uuid="cedde363-7bb3-4941-a56a-bbf1032b68ce" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="a6833afc-8ed9-4810-8c07-2ec1d4165055" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="810fc5e6-870c-41b1-b03d-f3ba47b2c252" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="6db93e80-ee69-4652-89b2-e2b2981b3421" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="55206a9f-0b89-45b8-ad3d-e3a0adfdfad6"/>
+                            <treeNodeStatistic uuid="42a92260-0d28-4a2e-9183-38b43dd8e31a"/>
+                            <treeNodeStatistic uuid="4da7245f-b69a-4d63-b8ac-ce20f5443df2" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="98066ded-5948-497a-a749-898b5f5fd27f" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="b64be0fe-73a6-4fe2-972d-d4aa8b27e46d"/>
+                            <treeNodeStatistic uuid="0fb6edd8-9e3b-4b4f-acf5-246df0fdc543" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="23b3e905-ffc1-4306-a8d2-4607d30ce3e8" countAllNodes="18" countUniqueIdentifiersNodes="1"/>
+                            <treeNodeStatistic uuid="3dcf073b-dbf2-4a28-9389-fdc8bbde6ef1"/>
+                            <treeNodeStatistic uuid="8549441d-c215-4cc1-a755-6a6cb25de8a6"/>
+                            <treeNodeStatistic uuid="17c238f7-3884-41dc-ba7c-19efe7fb6447"/>
+                            <treeNodeStatistic uuid="a1efe18f-1fe0-4a2f-9e45-7abbe109bc1b" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="31655a6b-a8d3-4ba4-b8ec-39901ecd278c" countAllNodes="20"/>
+                            <treeNodeStatistic uuid="0c3572e0-3904-4676-af66-23fa457c7c0f" hasChildrenCriticalError="true"/>
+                            <treeNodeStatistic uuid="19db3c2f-9922-4e84-beda-b61cecd6bc0a" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="634c7b72-7719-4f36-b2fa-495eac48dbb5" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c7086ada-1074-4e93-9532-fab1b5e7d91b" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c08739a6-162e-4af1-9ae1-d7ae869f8663"/>
+                            <treeNodeStatistic uuid="b2897057-8936-497e-8c91-9b3c4ed031a5"/>
+                            <treeNodeStatistic uuid="4e30216a-7db7-4a18-bfc4-8dd813feff58" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="62ba0d40-8d3b-451e-ba5c-9122e54aa1bb"/>
+                            <treeNodeStatistic uuid="c58242c4-aac0-4448-a9f1-52ffb8df044f" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="7a62dd3d-1d4f-4e16-bf7c-a893d7ace017" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="cc284937-4d8d-4d48-9f4f-a44c84333cbf"/>
+                            <treeNodeStatistic uuid="f99e85cd-7d4a-462f-9546-6ac5f00188e3" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="cb803781-0642-4ab2-8294-9ef363e96d28"/>
+                            <treeNodeStatistic uuid="9846d5f8-2da2-40d1-8f6b-dbe1c8061a1b"/>
+                            <treeNodeStatistic uuid="8e8ce0ce-89b5-489f-a8eb-98882dac9efd"/>
+                            <treeNodeStatistic uuid="a839a331-e7dd-449b-bd4d-ddf2c4f6185a" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c0368ccb-328d-4228-9044-739125970e45"/>
+                            <treeNodeStatistic uuid="e272ef1e-ec8b-4c36-a044-faf406a77d99" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="3e2ab29e-2092-4575-a473-6ed871f78e6d"/>
+                            <treeNodeStatistic uuid="86c823bd-baa9-4cd0-a2a4-fb40a017e098"/>
+                            <treeNodeStatistic uuid="90e97648-8276-4692-9b6f-8e34b1940eed"/>
+                            <treeNodeStatistic uuid="bcfddf9e-4232-4d0b-acb5-c9061566b6e5" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="3904c384-5e9e-41ea-a20e-5f339e3f2c9d" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="e6733295-566f-4a8d-b84e-990720383918" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="7bd3f5ca-7b1a-40be-b949-b877b2c3702e" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="0893a1e7-7087-4aeb-98db-cee0ea895fd8"/>
+                            <treeNodeStatistic uuid="67f57820-8a5f-4044-9b4e-fae72a49405c"/>
+                            <treeNodeStatistic uuid="2e747312-2619-4000-9556-e169547ff148"/>
+                            <treeNodeStatistic uuid="78f6d1c4-b960-4d58-a7fb-a991df497650" countAllNodes="7" countErrorNodes="5" countUniqueIdentifiersNodes="1">
+                                <messageActions sourceId="78f6d1c4-b960-4d58-a7fb-a991df497650" fullNameSource="Databases.IEAccountinginUSD.Schemas.audit.Tables.LogProcedures.Columns.SYS_USER_NAME">
+                                    <MessageAction scrRange="1:16" parsableId="8071a2b4-60fb-4fa3-be30-0e081134cd9a" arg1="ORIGINAL_LOGIN()" scrLine="1" srcStartColumn="1" template-id="7811"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="7e797cbe-22de-426b-9c74-ecf7c209b883" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="f399ca81-7b80-4fd7-81cb-82f11ced54e7"/>
+                            <treeNodeStatistic uuid="dae4ee1e-7047-4df1-b702-a6bc8980a9f0"/>
+                            <treeNodeStatistic uuid="97d8c4a5-ea66-47d2-b108-4a9d4bbc3865" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="10eaefde-6a19-4ab7-b15c-a4e522d58a70" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="44cc3237-26f9-40ac-bac3-2d04a05049b1"/>
+                            <treeNodeStatistic uuid="b50a382f-54f1-44fa-9334-bea5488fc0b8"/>
+                            <treeNodeStatistic uuid="de8b2c79-3cb9-4602-8d7b-5afb54763736"/>
+                            <treeNodeStatistic uuid="214188b3-b933-473f-a881-b287dea95bd8" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="a9a96946-1803-4622-99e6-99014599a53b" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="7ad8c02a-5912-423d-8638-1d01086c5803" countAllNodes="14" countUniqueIdentifiersNodes="3">
+                                <messageActions sourceId="7ad8c02a-5912-423d-8638-1d01086c5803" fullNameSource="Databases.IEAccountinginUSD.Schemas.dbo.Tables.DimDate.Columns.EnglishMonthName">
+                                    <MessageAction template-id="7679"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="81edd252-4eee-4d4f-9280-df6fa4fcf581"/>
+                            <treeNodeStatistic uuid="770cc504-a67b-4d8f-a337-5f1cf58f60c9"/>
+                            <treeNodeStatistic uuid="aaeda2f6-730c-4e54-8de8-5384f85045e8" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="a8fd1e66-39a1-4c39-8ecc-85473622ee33" countAllNodes="5" countErrorNodes="3">
+                                <messageActions sourceId="a8fd1e66-39a1-4c39-8ecc-85473622ee33" fullNameSource="Databases.IEAccountinginUSD.Schemas.audit.Tables.LogProcedures.Columns.SPID">
+                                    <MessageAction scrRange="1:6" parsableId="b552e6e7-fd51-4146-8f33-bf378deaa0b6" arg1="@@SPID" scrLine="1" srcStartColumn="1" template-id="7811"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="e51e5a84-72b7-4558-a966-027ca6e16b17" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c4f8fa67-af49-4155-a3a5-9394f4bba094" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="31d13445-9fcb-4dd4-8aa5-9d23cc721ce2"/>
+                            <treeNodeStatistic uuid="32686699-2a4d-43ff-a409-b2dd47de0ad6" countAllNodes="45" countUniqueIdentifiersNodes="4">
+                                <messageActions sourceId="32686699-2a4d-43ff-a409-b2dd47de0ad6" fullNameSource="Databases.IEAccountinginUSD.Schemas.meta.SQL scalar functions.ufn_GetConfigValue">
+                                    <MessageAction scrRange="338:359" parsableId="917c506e-5b7a-42f3-a952-37f5f2219dbb" scrLine="14" srcStartColumn="61" template-id="7795"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="0b471387-b720-4a05-8fce-e01c43e9ab41"/>
+                            <treeNodeStatistic uuid="3da6703f-d72c-4608-9f63-389ee8dc5b3c"/>
+                            <treeNodeStatistic uuid="9d7f7105-1baa-4964-886e-61b6cbb0d67d" countAllNodes="20"/>
+                            <treeNodeStatistic uuid="f23c0161-e68a-4189-9eca-48c8cb0561f8" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="cdc34edb-a803-499c-8bfa-8863f08de532"/>
+                            <treeNodeStatistic uuid="c71a98a9-3d1a-4a95-9cb9-6dbb855deec7" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="bfda2e7d-bce2-4370-bbf4-8a7ced92ea8a" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="552bc927-f55c-4b1c-bb0f-450a9817bef8"/>
+                            <treeNodeStatistic uuid="673bd789-3f86-4dd7-a83f-a9ff902dc3a8" hasChildrenCriticalError="true"/>
+                            <treeNodeStatistic uuid="9ad34d21-7a50-4581-8dc4-7a092c5bef12"/>
+                            <treeNodeStatistic uuid="c7887036-c476-4cd6-a0e8-af3a64cc7ea9"/>
+                            <treeNodeStatistic uuid="9ce92bf6-28e0-4840-8fe9-a96e2563a8f0"/>
+                            <treeNodeStatistic uuid="ad7cacb0-9949-4ee2-b37a-a2fb9e06694c" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="3c61057c-f51a-4eb4-a4f6-006699cf3141" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="b80bc9ce-3754-4960-8b2c-7cb8ad8ac15f"/>
+                            <treeNodeStatistic uuid="64c8b784-90f8-4efb-a1ee-a5fc5d85386a" countAllNodes="7" countErrorNodes="5" countUniqueIdentifiersNodes="1">
+                                <messageActions sourceId="64c8b784-90f8-4efb-a1ee-a5fc5d85386a" fullNameSource="Databases.IEAccountinginUSD.Schemas.audit.Tables.LogProcedures.Columns.SYS_APP_NAME">
+                                    <MessageAction scrRange="1:10" parsableId="77079004-f1c5-4ea7-8307-8e7741bfd766" arg1="APP_NAME()" scrLine="1" srcStartColumn="1" template-id="7811"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="fb97b36a-4e8f-462a-b188-b127bb8a4bce"/>
+                            <treeNodeStatistic uuid="61979da6-30f1-4387-bb20-cfe38cc0d1f0" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="62338777-81cb-431d-943c-fedcf7c7e600"/>
+                            <treeNodeStatistic uuid="22280aad-7679-46e3-b781-2c682b059c45"/>
+                            <treeNodeStatistic uuid="1e0970a0-b2ba-45e9-a4fe-c017076fb4ca"/>
+                            <treeNodeStatistic uuid="e338c9fe-accb-446f-ab61-2042818c9e7a"/>
+                            <treeNodeStatistic uuid="2aa21faf-cc26-41e6-b0bd-2a74f3ad5f13"/>
+                            <treeNodeStatistic uuid="eb196e41-e623-41a9-83e9-781090d79f47" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="fdb0cd4a-684f-472f-8766-db1f0e2ca572"/>
+                            <treeNodeStatistic uuid="d72998a5-703b-439f-95ab-0f46bcf00688"/>
+                            <treeNodeStatistic uuid="ab797c1f-4603-4504-ac0e-8c97d4fba8bd"/>
+                            <treeNodeStatistic uuid="8e769795-042c-46d8-ba9b-98546c5c7345" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="ec921aed-3df1-466f-98e2-6655b555e2c2" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="31040f7c-01a1-44ec-ba61-94c21d518a04" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="2303ee31-2084-4a83-ad3e-2326540c41e5" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="ff4e53f2-9f3d-4fab-9114-fc9500889be6"/>
+                            <treeNodeStatistic uuid="3acf0b6b-33f8-465c-8902-5e924cc46993"/>
+                            <treeNodeStatistic uuid="300eac6b-399a-49a0-b69f-e77025e90e9e"/>
+                            <treeNodeStatistic uuid="2065578b-98a6-41ed-876a-8baddfdd2976" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c53871c3-0f69-4b06-a523-ad90cbe84b03" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="16345246-4895-4a80-8333-7902d5c8a352"/>
+                            <treeNodeStatistic uuid="c4d0fa5e-96f3-43f8-ac5b-d24d2fcaf694" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="fcc973bb-ec1e-46d9-9fec-b9a9462d5b0e" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="76be8938-72a7-4170-8608-2c4fa4abf068" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c54f5194-136a-45c8-a003-4cf441f851a0"/>
+                            <treeNodeStatistic uuid="c9fc62d2-9962-455c-9ea5-c9e666e18a64"/>
+                            <treeNodeStatistic uuid="73b1ed1c-4702-4f1b-85cb-eb50e380b178" countAllNodes="198" countUniqueIdentifiersNodes="6"/>
+                            <treeNodeStatistic uuid="c285e810-4134-4e1f-a879-5fa5347194cb"/>
+                            <treeNodeStatistic uuid="f626079b-d74d-4a13-8ea9-7ff282ffc79e"/>
+                            <treeNodeStatistic uuid="e9590eba-ca44-4158-96e1-a581084beb0f"/>
+                            <treeNodeStatistic uuid="690d09b8-4156-4155-9622-d60e2da557e3"/>
+                            <treeNodeStatistic uuid="19a49f94-d376-470b-aa5f-c7ad95c112a2" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="d50bc3bf-4627-41cd-9c2a-f4c877ba68da" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="95655e8b-37e7-4bb9-aafc-a9821f16b305" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="fa94e939-e013-42fd-b6dc-b85d2c6c9170"/>
+                            <treeNodeStatistic uuid="dcac488c-9ef2-4789-9782-ded79be94f39" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="2cfeb1db-5da8-40d4-837b-f028d73762e3"/>
+                            <treeNodeStatistic uuid="5b0acd94-aec0-4416-b813-a5f8283ec742" countAllNodes="845" countErrorNodes="16" countUniqueIdentifiersNodes="42">
+                                <messageActions sourceId="5b0acd94-aec0-4416-b813-a5f8283ec742" fullNameSource="Databases.IEAccountinginUSD.Schemas.dbo.Procedures.sp_FillFactIncome">
+                                    <MessageAction scrRange="144:169" parsableId="e22a5e0e-778c-42c3-9add-fbd0a76d5cd0" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="9" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="316:325" parsableId="60fe7b5d-dd22-4f9d-a27a-e469ae97e286" arg1="sysobjects" scrLine="11" srcStartColumn="40" template-id="9997"/>
+                                    <MessageAction scrRange="333:334" parsableId="49b86de9-e7a0-45df-8107-48651fc2bab8" arg1="id" scrLine="11" srcStartColumn="57" template-id="9997"/>
+                                    <MessageAction scrRange="390:399" parsableId="8e74de16-d3cf-4225-8052-01ea9735d3b6" scrLine="12" srcStartColumn="14" template-id="7812"/>
+                                    <MessageAction scrRange="688:701" parsableId="ae3f8a50-c680-4344-a254-504f8944cd63" arg1="XACT_ABORT" arg2="SET" scrLine="19" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="710:735" parsableId="86767690-0987-46d4-bac0-9db0f7812b4f" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="21" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="1125:1135" parsableId="e381be71-b50f-4d4e-8a49-dda414527a02" arg1="@@TRANCOUNT" scrLine="37" srcStartColumn="16" template-id="7811"/>
+                                    <MessageAction scrRange="1155:1181" parsableId="f98fedf7-4251-42ef-a053-c537f0b237ae" scrLine="38" srcStartColumn="17" template-id="7807"/>
+                                    <MessageAction scrRange="1188:1197" parsableId="01ea24ea-ca01-4d95-9851-ba699b2e4581" scrLine="38" srcStartColumn="50" template-id="7807"/>
+                                    <MessageAction scrRange="1096:3286" parsableId="79191b01-91b6-4ecb-816a-565b080810a1" scrLine="35" srcStartColumn="0" template-id="7922"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="481686cd-98d7-4e6e-bc82-3e7705102367"/>
+                            <treeNodeStatistic uuid="6f2b4421-2ea3-4db7-9793-1b287d7c8d38" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="41152a78-1361-4ff9-a316-df945c76e7e0"/>
+                            <treeNodeStatistic uuid="d91fa4b1-0adb-415a-83f7-856771f959a4" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c8140c15-38ab-4a4d-8fcf-d7b0edcd9fb6" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="fbfbb9d7-fd1e-4f0e-a137-7174a4945c08" countAllNodes="89" countUniqueIdentifiersNodes="4"/>
+                            <treeNodeStatistic uuid="f43e5437-78d0-48be-a52a-9e05996b86c7" countAllNodes="85" countUniqueIdentifiersNodes="7"/>
+                            <treeNodeStatistic uuid="c5226b2c-294f-4a33-93e1-ab09fe7fa701" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="d550fbb4-b3e2-40e2-9cd5-5654e9b52034"/>
+                            <treeNodeStatistic uuid="a7487fd7-205c-4df0-b92d-8df2ffa5b4af" countAllNodes="7" countErrorNodes="5" countUniqueIdentifiersNodes="1">
+                                <messageActions sourceId="a7487fd7-205c-4df0-b92d-8df2ffa5b4af" fullNameSource="Databases.IEAccountinginUSD.Schemas.audit.Tables.LogProcedures.Columns.SYS_HOST_NAME">
+                                    <MessageAction scrRange="1:11" parsableId="59341d0a-98ed-4e9b-9d78-461856093f6d" arg1="HOST_NAME()" scrLine="1" srcStartColumn="1" template-id="7811"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="fb85274e-5c90-40cc-afce-d7f3b122ad6f"/>
+                            <treeNodeStatistic uuid="9fca53ae-ba03-47c1-9e95-df4ea68cce16"/>
+                            <treeNodeStatistic uuid="e5e351ca-55b7-492b-abf5-674f7d3011d6" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="9b6fc56d-5179-47af-8138-cda9ab54e7fb"/>
+                            <treeNodeStatistic uuid="387b6427-e861-4b7b-9c3b-6e1c052a6ea0" countAllNodes="1767" countErrorNodes="174" countUniqueIdentifiersNodes="74">
+                                <messageActions sourceId="387b6427-e861-4b7b-9c3b-6e1c052a6ea0" fullNameSource="Databases.IEAccountinginUSD.Schemas.dbo.Procedures.sp_RunTransform">
+                                    <MessageAction scrRange="141:166" parsableId="65cb1160-90cb-4a82-ae0e-f94838beb299" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="10" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="313:322" parsableId="9a2698fb-f73c-4b8c-a902-0a0223470137" arg1="sysobjects" scrLine="12" srcStartColumn="40" template-id="9997"/>
+                                    <MessageAction scrRange="330:331" parsableId="826cc3f5-45af-4d73-8443-6ac71cb1000c" arg1="id" scrLine="12" srcStartColumn="57" template-id="9997"/>
+                                    <MessageAction scrRange="387:396" parsableId="e7c86234-8b76-4a09-a6b0-97ab2ee551d6" scrLine="13" srcStartColumn="14" template-id="7812"/>
+                                    <MessageAction scrRange="691:704" parsableId="9c411c4a-a4cd-4717-8f11-d7d65acca125" arg1="XACT_ABORT" arg2="SET" scrLine="22" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="713:738" parsableId="6a2cf7bd-3ff6-4938-ab8d-007d6fb9a21b" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="24" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="1099:1109" parsableId="2f86b98b-bd45-4b5c-bbb4-01cb66ca004c" arg1="@@TRANCOUNT" scrLine="39" srcStartColumn="16" template-id="7811"/>
+                                    <MessageAction scrRange="1129:1153" parsableId="bcd7588d-7a4c-486e-ade7-e165e23108ae" scrLine="40" srcStartColumn="17" template-id="7807"/>
+                                    <MessageAction scrRange="1160:1169" parsableId="35663cde-86a8-490a-872a-cc6b34347c6c" scrLine="40" srcStartColumn="48" template-id="7807"/>
+                                    <MessageAction scrRange="1470:2429" parsableId="ac28cc49-e04f-47b0-9916-7d98511348a1" arg1="DateID" scrLine="49" srcStartColumn="2" template-id="7915"/>
+                                    <MessageAction scrRange="2451:2460" parsableId="8f9a4fab-0f12-49e0-8f23-508d4bb30ba6" scrLine="69" srcStartColumn="18" template-id="7833"/>
+                                    <MessageAction scrRange="2942:3045" parsableId="1a5f282e-c203-4bcf-b58a-0664e5fbd7e2" arg1="VARBINARY" scrLine="81" srcStartColumn="33" template-id="7708"/>
+                                    <MessageAction scrRange="3110:3357" parsableId="5036a6c3-44f1-4948-94f6-9156947c4101" arg1="VARBINARY" scrLine="82" srcStartColumn="33" template-id="7708"/>
+                                    <MessageAction scrRange="5376:6230" parsableId="35255bdb-cf9d-4152-8a70-3bb4e1cddcfd" arg1="ID" scrLine="112" srcStartColumn="1" template-id="7915"/>
+                                    <MessageAction scrRange="6251:6260" parsableId="43b41c0b-a618-4ee6-a757-c4ac0b27f772" scrLine="123" srcStartColumn="17" template-id="7833"/>
+                                    <MessageAction scrRange="1070:7050" parsableId="7127428b-1e1b-45fe-930b-c5a7f08821b7" scrLine="37" srcStartColumn="0" template-id="7922"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="132483cb-f734-4521-a433-fa30fd978382" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="abf9479c-8368-4528-a139-3bb1b35fdb1f" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="0b0f4fe6-015d-4745-bf97-ae8e32e133e4"/>
+                            <treeNodeStatistic uuid="0831f5c6-06bd-407b-bdc2-3c7e0d34cb54"/>
+                            <treeNodeStatistic uuid="3920b1a3-68ec-449c-b68a-15735bdfa827" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="fe1e39c4-1354-4e34-96d3-9fe8a3d1e2a4" countAllNodes="7" countUniqueIdentifiersNodes="1"/>
+                            <treeNodeStatistic uuid="82c6e36d-fe2d-4418-806e-23a6cbdd6b73" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="071c7135-ca49-4242-a57f-dd68d73f99f1" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="225162fc-b3cd-4adc-b3b6-cbfdcbeab0e2" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="fe0e2af1-869c-46ae-a438-31c2fefc62ca"/>
+                            <treeNodeStatistic uuid="b90da7c5-a839-4a88-a04b-d34853d2c7a9"/>
+                            <treeNodeStatistic uuid="bcd8182b-bf1b-490e-8808-0a2a427defb8" countAllNodes="20"/>
+                            <treeNodeStatistic uuid="e76ddce0-c06c-4440-8852-c46afb8bef10" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="4fced915-1467-4ab4-a4d7-183dae664387" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="5e06df9f-7299-45fc-ad1c-59062a1d9dff" hasChildrenCriticalError="true"/>
+                            <treeNodeStatistic uuid="b206826a-e0a8-4f15-a151-35928f042f12"/>
+                            <treeNodeStatistic uuid="0d53f860-3f29-4e84-8fc5-77f196451bea" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="aec25451-5ca5-44c4-aa49-211a18059aa2" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="d4822fa5-7164-41b4-9fe0-b91e00dab0d5" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="17b9dd6e-bb89-4800-a9a7-1c9ce750f23a" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="954f1d8c-6951-41c0-86cf-90bff2e245d3"/>
+                            <treeNodeStatistic uuid="004cfbbd-c402-41ac-afdb-4628454103fe" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="856ea0ea-2b5d-4940-b12d-f6f83ff566ad" countAllNodes="1050" countErrorNodes="16" countUniqueIdentifiersNodes="43">
+                                <messageActions sourceId="856ea0ea-2b5d-4940-b12d-f6f83ff566ad" fullNameSource="Databases.IEAccountinginUSD.Schemas.uts.Procedures.usp_UnitTest">
+                                    <MessageAction scrRange="426:439" parsableId="dbbd74f9-7e4e-40d9-a53e-a96982d056df" scrLine="12" srcStartColumn="96" template-id="7795"/>
+                                    <MessageAction scrRange="456:460" parsableId="25dece62-baa0-4f4f-bb71-bd34b23d4c61" arg1="#Test" scrLine="13" srcStartColumn="12" template-id="9997"/>
+                                    <MessageAction scrRange="518:522" parsableId="d491421c-4505-46e9-8bf8-ccfbdfcca2ac" scrLine="14" srcStartColumn="55" template-id="7812"/>
+                                    <MessageAction scrRange="636:650" parsableId="18e8e3b7-35bf-4f1c-b9a2-3456fd3cdeae" scrLine="18" srcStartColumn="30" template-id="7795"/>
+                                    <MessageAction scrRange="898:910" parsableId="a20c251b-b048-4e79-891e-5e534ba4d747" scrLine="26" srcStartColumn="131" template-id="7795"/>
+                                    <MessageAction scrRange="1454:1534" parsableId="c291ee88-e26e-418c-8b81-816b3bd621e4" scrLine="42" srcStartColumn="8" template-id="7701"/>
+                                    <MessageAction scrRange="1866:1885" parsableId="d2d62b8b-f383-4c82-b3cf-91a4dffec890" scrLine="57" srcStartColumn="55" template-id="7795"/>
+                                    <MessageAction scrRange="2309:2319" parsableId="0e31aee7-eeb5-46e3-9912-910d15054d79" scrLine="71" srcStartColumn="2" template-id="7672"/>
+                                    <MessageAction scrRange="2583:2593" parsableId="4e9d48f0-9455-4969-bf19-5e5e59de322e" scrLine="79" srcStartColumn="2" template-id="7672"/>
+                                    <MessageAction scrRange="2859:2869" parsableId="a9edcd95-6f30-4099-bbe4-9f8e4bfc166e" scrLine="87" srcStartColumn="2" template-id="7672"/>
+                                    <MessageAction scrRange="2933:2952" parsableId="1a9f96ea-3959-429b-82b2-8c9260efc053" scrLine="91" srcStartColumn="55" template-id="7795"/>
+                                    <MessageAction scrRange="1615:3920" parsableId="d0e7eadb-6498-440d-8a4a-1e50c2f4cb9d" scrLine="48" srcStartColumn="0" template-id="7922"/>
+                                    <MessageAction scrRange="3125:3144" parsableId="eb7853dc-98fa-4c63-866b-338b92a42edd" scrLine="99" srcStartColumn="25" template-id="7807"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="e1c319a3-d27e-4a4c-b64f-86b37924369e"/>
+                            <treeNodeStatistic uuid="631e3440-6ffe-469d-80ae-aab3d7e856d1" countAllNodes="15" countErrorNodes="13" countUniqueIdentifiersNodes="2">
+                                <messageActions sourceId="631e3440-6ffe-469d-80ae-aab3d7e856d1" fullNameSource="Databases.IEAccountinginUSD.Schemas.dbo.Tables.DimDate.Columns.SimpleRussianDate">
+                                    <MessageAction scrRange="1:42" parsableId="92c50f94-b155-4490-abbf-87ed811f7832" arg1="FORMAT(VARCHAR,VARCHAR)" scrLine="1" srcStartColumn="1" template-id="7811"/>
+                                    <MessageAction template-id="7679"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="f936afcf-e6d1-4243-ad68-6d2cc53fd40b"/>
+                            <treeNodeStatistic uuid="850b81a7-b3d2-4f37-856e-30651101295c" countAllNodes="7" countUniqueIdentifiersNodes="1"/>
+                            <treeNodeStatistic uuid="9978da46-734c-42ff-9609-ce7b3554a68a"/>
+                            <treeNodeStatistic uuid="ef3d001d-6cd8-4d17-841e-c37f09090fa4"/>
+                            <treeNodeStatistic uuid="6fd0c156-3726-4f9f-8986-9517e40f6d85"/>
+                            <treeNodeStatistic uuid="f7bcd78a-3943-4578-8599-e73aa1bca037"/>
+                            <treeNodeStatistic uuid="a9ba5826-8f93-4337-b7f1-1463e0bdc93d" countAllNodes="20"/>
+                            <treeNodeStatistic uuid="95b15be8-b22d-4773-9a67-af496ea01ba5"/>
+                            <treeNodeStatistic uuid="7580728b-e9b1-41c5-9a51-0df0e9d7fc27"/>
+                            <treeNodeStatistic uuid="1d5cac62-79c8-4619-80db-22bb156400c4" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="9bfcaf24-a91f-4d21-8620-6d644cd3fc42" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="fb66cc62-418d-4910-b987-49cbc102e7e3" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="7d492ec3-ec96-4c8f-b503-b9c5c797eff6"/>
+                            <treeNodeStatistic uuid="5fe60b06-ea3e-4a64-bdb7-6cf2a47014ba" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="1f74d758-eaac-49e2-b7b8-0ed6553b6402" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="9d2fbf0b-6d81-4f4f-ba37-5f22ee1990d0" hasChildrenCriticalError="true"/>
+                            <treeNodeStatistic uuid="a97b3328-a733-447e-964d-84b765250ff9" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c5e702d8-d49d-485c-80b9-5b44ef4e3a71"/>
+                            <treeNodeStatistic uuid="b88f985d-2d57-40ce-9070-f635d3b4cd87" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="d880f3ce-cbde-4152-90a9-d6e206a3ae14"/>
+                            <treeNodeStatistic uuid="9163a87e-60a7-43b3-82b6-39ea06fddc96"/>
+                            <treeNodeStatistic uuid="17c6f912-a09e-4899-b85e-6d86cae546d1"/>
+                            <treeNodeStatistic uuid="29ef012c-aa61-4868-ae28-c7829c83baa2" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="1ce8d982-10cc-481a-9126-e8154ffdce33"/>
+                            <treeNodeStatistic uuid="63e2add8-723b-4c6b-ae90-669b24350916" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="616c4f51-7bdf-40de-af59-b450a4de7ba8" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="9eea70d6-7dff-4dde-bc44-bc4a2652c909"/>
+                            <treeNodeStatistic uuid="e4c73548-4ace-4317-96e4-eb50b3c1e36a"/>
+                            <treeNodeStatistic uuid="aec8ae6a-561e-470d-a65f-a3cb89c8caa4"/>
+                            <treeNodeStatistic uuid="413a823e-3cac-48a3-b881-b7fa6191baad"/>
+                            <treeNodeStatistic uuid="2f02c6e4-17c7-42e0-975e-7baa5a00b979" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="8ed3bd05-706d-4caa-a75a-504c3ded98a7"/>
+                            <treeNodeStatistic uuid="729fd818-a4af-4ca9-88d8-f23e7ba55a8c" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="d37aaa05-9cb1-4407-99df-a2d5483959b5" countAllNodes="20"/>
+                            <treeNodeStatistic uuid="dce86d57-4062-415c-85d6-1c30b079ce4e"/>
+                            <treeNodeStatistic uuid="5003a94d-891d-4048-9b13-69f25df6da5d"/>
+                            <treeNodeStatistic uuid="a496600c-9641-4692-9452-f41f600ca55d" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="1e69160a-5172-47d9-84df-d831f0d1d7a0" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="0ef4bf05-86d7-4b4e-b2f5-3ab147392642" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="2e6cd680-0716-49ef-9f52-d2fa19a3a549" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="e255ae0c-7aac-4720-ade0-048a98f76f12"/>
+                            <treeNodeStatistic uuid="8b4ddad1-dfe7-43b3-88fb-3a9ae153c7a1" countAllNodes="651" countErrorNodes="19" countUniqueIdentifiersNodes="24">
+                                <messageActions sourceId="8b4ddad1-dfe7-43b3-88fb-3a9ae153c7a1" fullNameSource="Databases.IEAccountinginUSD.Schemas.upload.Procedures.upl_IncomeBook">
+                                    <MessageAction scrRange="607:632" parsableId="1d4235c9-e79f-4592-b2b5-ececf0a5d518" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="19" srcStartColumn="5" template-id="7674"/>
+                                    <MessageAction scrRange="781:790" parsableId="a9eef9e2-6feb-48ac-987e-eb0ba29a46ff" arg1="sysobjects" scrLine="21" srcStartColumn="41" template-id="9997"/>
+                                    <MessageAction scrRange="798:799" parsableId="3053b315-0ace-4177-b2fa-0eb31b044962" arg1="id" scrLine="21" srcStartColumn="58" template-id="9997"/>
+                                    <MessageAction scrRange="856:865" parsableId="d027e934-940d-4454-82d9-54587ad08e45" scrLine="22" srcStartColumn="15" template-id="7812"/>
+                                    <MessageAction scrRange="1377:1390" parsableId="80930e9b-e8e7-42da-bfbf-3463bc37a8fc" arg1="XACT_ABORT" arg2="SET" scrLine="32" srcStartColumn="5" template-id="7674"/>
+                                    <MessageAction scrRange="1400:1425" parsableId="0eeefe69-6923-4f11-881b-36fb923945bc" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="34" srcStartColumn="5" template-id="7674"/>
+                                    <MessageAction scrRange="1868:1878" parsableId="56515ad4-3139-4593-9ea9-ed5b67aa9bcb" arg1="@@TRANCOUNT" scrLine="49" srcStartColumn="15" template-id="7811"/>
+                                    <MessageAction scrRange="1897:1921" parsableId="0b447b96-3ece-4e85-899c-ddc5f8ea552c" scrLine="50" srcStartColumn="16" template-id="7807"/>
+                                    <MessageAction scrRange="1928:1937" parsableId="7c49ac8e-dd20-43fc-9e1b-1d4dcdeb9b8c" scrLine="50" srcStartColumn="47" template-id="7807"/>
+                                    <MessageAction scrRange="2745:2758" parsableId="599d376f-ecd9-4fd7-90e4-f96d764a41f2" scrLine="67" srcStartColumn="2" template-id="7837"/>
+                                    <MessageAction scrRange="2779:2788" parsableId="3c84a496-10e6-47b0-b5df-57a408ccf760" scrLine="68" srcStartColumn="18" template-id="7833"/>
+                                    <MessageAction scrRange="1840:3559" parsableId="9c7731e4-c11a-4f9a-a86c-c4fbe2461499" scrLine="47" srcStartColumn="1" template-id="7922"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="bada70c3-d334-47b9-b3dd-8b05b995fa82" countAllNodes="20"/>
+                            <treeNodeStatistic uuid="9e2b0e16-d117-4363-b732-bd427e7bfd1e"/>
+                            <treeNodeStatistic uuid="cfdced17-ad3b-4d32-98d1-e442cb9b7096" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="7318f139-6a17-4769-bd62-e5e2fdd07d52"/>
+                            <treeNodeStatistic uuid="f3b0d5e3-f114-4485-8028-46dc06314065" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="8d405ddf-8264-4747-93ef-f8ab71967408" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="2d62c97f-04bb-4022-8f87-90963333c1ce" countAllNodes="260" countErrorNodes="3" countUniqueIdentifiersNodes="24">
+                                <messageActions sourceId="2d62c97f-04bb-4022-8f87-90963333c1ce" fullNameSource="Databases.IEAccountinginUSD.Schemas.audit.Procedures.sp_AuditFinish">
+                                    <MessageAction scrRange="364:373" parsableId="d6a5a6fa-2cc2-4b8c-8c09-665fdf50475c" arg1="sysobjects" scrLine="14" srcStartColumn="41" template-id="9997"/>
+                                    <MessageAction scrRange="381:382" parsableId="fff73f12-4875-4e57-9a0b-0649b3a1edc9" arg1="id" scrLine="14" srcStartColumn="58" template-id="9997"/>
+                                    <MessageAction scrRange="439:448" parsableId="35a9f6fa-07c4-4712-8805-607405dc7d5c" scrLine="15" srcStartColumn="15" template-id="7812"/>
+                                    <MessageAction scrRange="529:539" parsableId="097cdfef-668d-4b12-bec5-bc6aac66137e" arg1="@@TRANCOUNT" scrLine="18" srcStartColumn="18" template-id="7811"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="ae7260a6-0140-4109-a2df-05c88fcaef2a" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="9652af2f-e40a-47f4-a732-3c59610d8789"/>
+                            <treeNodeStatistic uuid="ac4bbdd5-23a8-446a-ab4a-33f445d69659"/>
+                            <treeNodeStatistic uuid="8a6bcfa7-b472-40f5-bf57-ddee31a5373a" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="823e92c5-5a72-4c36-9b68-77676ef9cd27" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="2bf1e0bf-1b9d-4f28-9b59-546ec21433a8"/>
+                            <treeNodeStatistic uuid="9ef09001-6fe7-45e4-ada6-93d0a35da8aa"/>
+                            <treeNodeStatistic uuid="1ded64bb-23d5-4249-9e1b-50d292b425c4" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="590daed8-5e41-46f8-9f7d-4c4aa4e941c6"/>
+                            <treeNodeStatistic uuid="bfb197cc-1445-4be6-aed7-1026b2aa6af0" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="2688a5c0-49b8-473c-b269-aa3d85c44124" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="05304854-24a0-4fd2-a64b-5c5ec1eef696"/>
+                            <treeNodeStatistic uuid="631f8bad-5cfc-4162-b9c9-679071007d0e"/>
+                            <treeNodeStatistic uuid="1d0c823e-9166-492d-b410-f409240d8c10" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="977f5dc7-2112-483b-a117-26a3668337d9"/>
+                            <treeNodeStatistic uuid="f38d277e-1345-42c7-a3a9-7b63bbeecf2a"/>
+                            <treeNodeStatistic uuid="6f56ce48-b2ae-463a-b7b3-09991bf2192d"/>
+                            <treeNodeStatistic uuid="abadde1c-93ac-46cc-ac8f-c3834eb97ce5"/>
+                            <treeNodeStatistic uuid="0919f945-5fa6-4f0f-a1c9-1e40c460469d"/>
+                            <treeNodeStatistic uuid="ef23339d-e0ff-434e-a5a3-0d3045d9b9c0" countAllNodes="14" countUniqueIdentifiersNodes="3">
+                                <messageActions sourceId="ef23339d-e0ff-434e-a5a3-0d3045d9b9c0" fullNameSource="Databases.IEAccountinginUSD.Schemas.dbo.Tables.DimDate.Columns.EnglishDayName">
+                                    <MessageAction template-id="7679"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="d923ef00-2c75-425d-81a8-dcb23693540a"/>
+                            <treeNodeStatistic uuid="fc5d83cf-e622-4e0a-b724-f06cec6b8d11" countAllNodes="782" countErrorNodes="34" countUniqueIdentifiersNodes="52">
+                                <messageActions sourceId="fc5d83cf-e622-4e0a-b724-f06cec6b8d11" fullNameSource="Databases.IEAccountinginUSD.Schemas.dbo.Procedures.sp_FillDimDate">
+                                    <MessageAction scrRange="525:550" parsableId="137dc535-bf5a-4dde-801f-4ebdbc2b5c7a" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="12" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="697:706" parsableId="d067b245-00f1-4d02-9423-bebd16ac5a94" arg1="sysobjects" scrLine="14" srcStartColumn="40" template-id="9997"/>
+                                    <MessageAction scrRange="714:715" parsableId="5e196e54-a6eb-48c1-a3d5-64c31f613390" arg1="id" scrLine="14" srcStartColumn="57" template-id="9997"/>
+                                    <MessageAction scrRange="771:780" parsableId="0317b057-e34a-48f5-b631-4c1ec614799d" scrLine="15" srcStartColumn="14" template-id="7812"/>
+                                    <MessageAction scrRange="2055:2097" parsableId="3be7a27b-aa7f-4207-a9b3-0dd2cd015105" arg1="FORMAT(VARCHAR,VARCHAR)" scrLine="42" srcStartColumn="26" template-id="7811"/>
+                                    <MessageAction scrRange="2127:2169" parsableId="6a105bc0-baee-405b-9d91-1bfa3d66c211" arg1="FORMAT(VARCHAR,VARCHAR)" scrLine="43" srcStartColumn="26" template-id="7811"/>
+                                    <MessageAction scrRange="2520:2542" parsableId="6d8f2878-0c11-4607-a595-bfa18361cd03" scrLine="51" srcStartColumn="0" template-id="7938"/>
+                                    <MessageAction scrRange="2469:2476" parsableId="a0895a8e-9afc-410c-bbda-2f6121086e91" scrLine="48" srcStartColumn="6" template-id="7812"/>
+                                    <MessageAction scrRange="2562:2571" parsableId="05c76177-87e4-4653-a64c-6863d801f299" scrLine="52" srcStartColumn="16" template-id="7833"/>
+                                    <MessageAction scrRange="3334:3703" parsableId="803484ff-ea92-475a-87b0-b0a90cd2375e" scrLine="62" srcStartColumn="1" template-id="7837"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="b7d3cd33-4f18-4f3c-919d-240e4375adaa"/>
+                            <treeNodeStatistic uuid="a3e51b7f-4862-4204-9b11-910215ed1a8b" countAllNodes="1398" countErrorNodes="31" countUniqueIdentifiersNodes="66">
+                                <messageActions sourceId="a3e51b7f-4862-4204-9b11-910215ed1a8b" fullNameSource="Databases.IEAccountinginUSD.Schemas.dbo.Procedures.sp_RunBatch">
+                                    <MessageAction scrRange="607:632" parsableId="1e3b8471-51f9-4e6d-8b70-34c242e84d67" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="18" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="779:788" parsableId="346175a6-fed3-4fc3-af94-7f360fb51dae" arg1="sysobjects" scrLine="20" srcStartColumn="40" template-id="9997"/>
+                                    <MessageAction scrRange="796:797" parsableId="8c8a904b-1ccd-4f1d-af64-7f560e8c2a2a" arg1="id" scrLine="20" srcStartColumn="57" template-id="9997"/>
+                                    <MessageAction scrRange="853:862" parsableId="9c7a1871-dc11-4cc2-a402-537bce6e337f" scrLine="21" srcStartColumn="14" template-id="7812"/>
+                                    <MessageAction scrRange="1151:1164" parsableId="a640ce81-2601-427c-a256-4ea57200fa1c" arg1="XACT_ABORT" arg2="SET" scrLine="28" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="1173:1198" parsableId="9ccc5a1d-7117-4ba7-9642-000853f1cecb" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="30" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="1555:1565" parsableId="80de259a-c94e-4455-9b43-67a37e9653b8" arg1="@@TRANCOUNT" scrLine="45" srcStartColumn="16" template-id="7811"/>
+                                    <MessageAction scrRange="1585:1610" parsableId="355286a6-cf38-4f2f-afde-f63f003009e1" scrLine="46" srcStartColumn="17" template-id="7807"/>
+                                    <MessageAction scrRange="1617:1626" parsableId="4ef490d1-843c-47df-8e0d-dce41d60b2ce" scrLine="46" srcStartColumn="49" template-id="7807"/>
+                                    <MessageAction scrRange="3051:3055" parsableId="11a75107-2f72-4c40-8763-6a6ce0099f9a" scrLine="74" srcStartColumn="8" template-id="7812"/>
+                                    <MessageAction scrRange="3464:3478" parsableId="88f9e50c-748a-4894-b94d-bae0ffa83709" scrLine="88" srcStartColumn="21" template-id="7774"/>
+                                    <MessageAction scrRange="4131:4142" parsableId="06db5b8e-a5b2-48f0-b60b-b87619e3a5e7" scrLine="110" srcStartColumn="7" template-id="7774"/>
+                                    <MessageAction scrRange="4207:4218" parsableId="bfe86ba3-a64e-4801-b6a4-0ee38a7accdb" scrLine="113" srcStartColumn="18" template-id="7774"/>
+                                    <MessageAction scrRange="4648:4659" parsableId="46f615d0-a417-4cdc-afa4-ec38be000c14" scrLine="123" srcStartColumn="10" template-id="7774"/>
+                                    <MessageAction scrRange="4677:4688" parsableId="067cd20e-d2b2-46a4-9e28-7f5a930489f4" scrLine="124" srcStartColumn="15" template-id="7774"/>
+                                    <MessageAction scrRange="4769:4780" parsableId="7ccde502-e08c-4671-afa4-8a1b5e9c3bb5" scrLine="127" srcStartColumn="19" template-id="7774"/>
+                                    <MessageAction scrRange="4821:4832" parsableId="e5d55537-a02e-4f46-8ca3-f27da9275c0e" scrLine="129" srcStartColumn="8" template-id="7774"/>
+                                    <MessageAction scrRange="4848:4859" parsableId="cc5afbd4-6363-434a-a492-faa80b010ae7" scrLine="130" srcStartColumn="13" template-id="7774"/>
+                                    <MessageAction scrRange="1526:5582" parsableId="e7af147c-ec51-403b-a68e-50310287c37f" scrLine="43" srcStartColumn="0" template-id="7922"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="f2af3219-0983-4554-ac7a-fdc583dd538e"/>
+                            <treeNodeStatistic uuid="a58f1148-250b-4984-89e5-e62d03a2b7ac" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="fb2a3b5d-aa69-4599-8f08-87d2c104bbd7" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="579cfd52-5a6f-4307-9e91-f355783395c1" hasChildrenCriticalError="true"/>
+                            <treeNodeStatistic uuid="f9eaed7c-4402-46b7-b058-c3ab21b369f4" hasChildrenCriticalError="true"/>
+                            <treeNodeStatistic uuid="6f045e7e-5834-41e8-8936-5537d2ff09c1" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="9661a8af-5353-46a7-88fe-58ec63b23703" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="aa570238-db04-4265-900f-d8914e042408"/>
+                            <treeNodeStatistic uuid="b1d61b44-bd50-42e4-8945-b2d6da84d7ae" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="e7daa044-0c42-41ef-94df-ee16e5346851" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c0ff7b36-94a3-404f-bdbe-186c165a730d" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="93444bd9-696b-4448-8e5e-ba7d35d17fef" countAllNodes="324" countErrorNodes="3" countUniqueIdentifiersNodes="25">
+                                <messageActions sourceId="93444bd9-696b-4448-8e5e-ba7d35d17fef" fullNameSource="Databases.IEAccountinginUSD.Schemas.audit.Procedures.sp_AuditStart">
+                                    <MessageAction scrRange="547:556" parsableId="a3dc0525-2eb4-492f-9d2d-e4745390923e" arg1="sysobjects" scrLine="23" srcStartColumn="41" template-id="9997"/>
+                                    <MessageAction scrRange="564:565" parsableId="39169551-7bd2-40d0-a9b6-84df5aca5231" arg1="id" scrLine="23" srcStartColumn="58" template-id="9997"/>
+                                    <MessageAction scrRange="622:631" parsableId="c745ecc2-faa7-41ce-a121-4f96fd03cc67" scrLine="24" srcStartColumn="15" template-id="7812"/>
+                                    <MessageAction scrRange="787:797" parsableId="20e62f6f-a02b-4a81-af6b-9940db8bb871" arg1="@@TRANCOUNT" scrLine="30" srcStartColumn="18" template-id="7811"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="d581df4d-816f-470e-9a7c-b5efcc5abec1"/>
+                            <treeNodeStatistic uuid="c6115cf1-f2d2-4803-8497-4d12a00ee212" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="c632eb1c-6c9d-4ea6-b538-b62fbb904e39" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="7b5aff16-9b36-4965-80c0-0fc6aae43851"/>
+                            <treeNodeStatistic uuid="a92aadf8-8143-4de1-8f7c-9aa7367a207f" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="1f6f9276-3d92-44d6-88c4-8d150c701a4e"/>
+                            <treeNodeStatistic uuid="65829aab-5ee4-4c4c-abab-86a082b4658a" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="f29bd0aa-92d0-40f3-bf6c-673a8786047a" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="8a0d207d-a8ee-4588-b9bf-c546e484b6d1"/>
+                            <treeNodeStatistic uuid="5dfb5143-db26-477e-a7dd-05d2d4b83ded"/>
+                            <treeNodeStatistic uuid="b8a7bbf2-e782-4bda-b2b2-1a307f5a776f"/>
+                            <treeNodeStatistic uuid="09c3a0a0-43f1-4802-ad2c-f763a1a9f0cd"/>
+                            <treeNodeStatistic uuid="f1cb9cfb-491a-4cff-9b7e-04e2c72515d1" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="33de1c8d-5d47-473f-a73e-5053e075038c"/>
+                            <treeNodeStatistic uuid="a9a55ee1-e99b-48a3-8025-0ba3b8a63a9d" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="1c16d4dc-275d-4c4e-89f9-6153fb2a7f91"/>
+                            <treeNodeStatistic uuid="de23ef8d-4657-4b81-a36e-ff3ff158f0bb"/>
+                            <treeNodeStatistic uuid="bc7f57ea-2cff-4825-942a-5d7002ee9737"/>
+                            <treeNodeStatistic uuid="394a63dd-7ef3-4e04-b5dd-32f54b82ab06"/>
+                            <treeNodeStatistic uuid="e62fbc87-1d96-4156-ba3f-7302e211788b" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="05c7fb67-f2ef-4275-89a4-46f179a22502"/>
+                            <treeNodeStatistic uuid="43aca11b-44b1-4e9e-ae24-c381263b00d4"/>
+                            <treeNodeStatistic uuid="cf595d0d-134a-4148-85d7-5353e6d649d7"/>
+                            <treeNodeStatistic uuid="c2adf8e7-5191-4209-87d4-9295e832db74"/>
+                            <treeNodeStatistic uuid="30d12ffb-133b-48ce-a6da-96db150f4406" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="4d0c2245-7238-41d7-be54-f448c1056066" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="0eee2cd0-577c-44ee-a2b3-d487cb3e337c"/>
+                            <treeNodeStatistic uuid="a0ec4e4a-1353-42fb-a126-f52f72cfae12" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="cf15a5c2-ef51-436e-bacb-dfca1f19ef2d" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="912c56c3-120a-4ea8-a262-2167ca71fbe7"/>
+                            <treeNodeStatistic uuid="ddd2fade-c69f-44eb-98b1-4eec5852d4a8"/>
+                            <treeNodeStatistic uuid="e805ae84-841d-4515-843a-13499e707155" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="966e3bd3-4ab4-4e5c-ac36-1d037cda355b"/>
+                            <treeNodeStatistic uuid="fe237fbc-b649-49ab-ae38-06428b7aaa9f"/>
+                            <treeNodeStatistic uuid="75a02a01-df72-425c-bdd8-0c59e04fd6a2" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="3b8bce63-17c0-401e-a822-fdc16e105221" countAllNodes="1168" countErrorNodes="16" countUniqueIdentifiersNodes="42">
+                                <messageActions sourceId="3b8bce63-17c0-401e-a822-fdc16e105221" fullNameSource="Databases.IEAccountinginUSD.Schemas.upload.Procedures.upl_CbrUsdRate">
+                                    <MessageAction scrRange="687:712" parsableId="e51087dd-3bdc-4aaa-82f7-0796b8797ebd" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="20" srcStartColumn="5" template-id="7674"/>
+                                    <MessageAction scrRange="861:870" parsableId="986e0ad6-0f60-4cdf-840b-36d7c9e43c6f" arg1="sysobjects" scrLine="22" srcStartColumn="41" template-id="9997"/>
+                                    <MessageAction scrRange="878:879" parsableId="cdcd5ab6-5f8c-49d8-8290-eae3c4d67c6e" arg1="id" scrLine="22" srcStartColumn="58" template-id="9997"/>
+                                    <MessageAction scrRange="936:945" parsableId="acd64158-e345-4a89-9af7-adb2eb524675" scrLine="23" srcStartColumn="15" template-id="7812"/>
+                                    <MessageAction scrRange="1450:1463" parsableId="c20b6e5f-daa1-42d2-94c5-af0042d90f8f" arg1="XACT_ABORT" arg2="SET" scrLine="34" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="1472:1497" parsableId="f57dcec8-83b6-485e-8503-f37e447f19a3" arg1="CONCAT_NULL_YIELDS_NULL" arg2="SET" scrLine="36" srcStartColumn="4" template-id="7674"/>
+                                    <MessageAction scrRange="1933:1943" parsableId="6aee95d8-71d4-4ad5-b7b5-af061afd1ccc" arg1="@@TRANCOUNT" scrLine="52" srcStartColumn="16" template-id="7811"/>
+                                    <MessageAction scrRange="1963:1992" parsableId="e11ccf60-fb03-4ea1-afbc-4f710b2fac66" scrLine="53" srcStartColumn="17" template-id="7807"/>
+                                    <MessageAction scrRange="1999:2008" parsableId="dacfadd5-ccf8-4563-9978-091f4e56c6f4" scrLine="53" srcStartColumn="53" template-id="7807"/>
+                                    <MessageAction scrRange="1904:4851" parsableId="ffad0a56-7220-4789-b753-76f7bd57f004" scrLine="50" srcStartColumn="0" template-id="7922"/>
+                                </messageActions>
+                            </treeNodeStatistic>
+                            <treeNodeStatistic uuid="9b81d98d-26d9-4918-91cb-4431edf9802a"/>
+                            <treeNodeStatistic uuid="fca3e742-6945-418a-857f-e60760a25910"/>
+                            <treeNodeStatistic uuid="e6492976-8373-44b3-b53f-bebe7111f58a"/>
+                            <treeNodeStatistic uuid="95257915-c905-4241-be57-240f59891940" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="cb4dd0cb-2dbd-41c3-a8e3-4f0b28aa0d5c"/>
+                            <treeNodeStatistic uuid="b62ebc7f-0ed6-4170-9d94-30db5b21be75"/>
+                            <treeNodeStatistic uuid="ef46069b-7db6-4724-9776-7a9b10ad99e2" countAllNodes="70" countUniqueIdentifiersNodes="10"/>
+                            <treeNodeStatistic uuid="83cc8fa2-7b9e-4995-b1ac-a64806e9e085" countAllNodes="20"/>
+                            <treeNodeStatistic uuid="c6f24fb6-0578-4875-8f94-8dd18ce93514"/>
+                            <treeNodeStatistic uuid="76a1756c-dc7d-45bf-b704-1166d873a5ec" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="d56fa746-32ca-4933-82a2-b389ecc9c9c1"/>
+                            <treeNodeStatistic uuid="ff29d589-a6f7-44a6-8b06-1be1dce03b00" countAllNodes="2"/>
+                            <treeNodeStatistic uuid="f9baf756-1ce8-4ed1-b006-4d7a723e1c60"/>
+                            <treeNodeStatistic uuid="8a88dd33-ba47-4113-8387-ad835e259933"/>
+                            <treeNodeStatistic uuid="2afe462b-8fff-41ce-81c9-fdd92ce741ec" countAllNodes="2"/>
+                        </conversionPair>
+                    </documentTransformStatistic>
+                    <usedFeatures/>
+                    <AppDynSqlStatistic>
+                        <dyn_statistics/>
+                    </AppDynSqlStatistic>
+                </OperationTransformStatistic>
+            </transformStatistic>
+        </operationStatistics>
+        <assessedNodes/>
+    </instances>
+</tree>

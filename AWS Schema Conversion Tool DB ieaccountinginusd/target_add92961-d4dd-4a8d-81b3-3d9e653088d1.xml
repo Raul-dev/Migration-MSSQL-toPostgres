@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <complex-attributes>
+        <type name="cursor">
+            <attr name="sql"></attr>
+            <attr name="spec-sql"></attr>
+        </type>
+        <type name="view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="package">
+            <attr name="body-sql"></attr>
+            <attr name="spec-sql"></attr>
+            <attr name="init-sql"></attr>
+        </type>
+        <type name="function">
+            <attr name="comment"></attr>
+            <attr name="sql"></attr>
+            <attr name="spec-sql"></attr>
+        </type>
+        <type name="trigger">
+            <attr name="sql"></attr>
+        </type>
+        <type name="procedure">
+            <attr name="comment"></attr>
+            <attr name="sql"></attr>
+            <attr name="spec-sql"></attr>
+        </type>
+    </complex-attributes>
+    <metadata _I_D="42240979-d639-4f61-9755-ab965931e7ed" vendor="MARIA_DB" name="&lt;Maria_DB (virtual)&gt;" synthetic="true" metaStorageUuid="add92961-d4dd-4a8d-81b3-3d9e653088d1"/>
+</tree>

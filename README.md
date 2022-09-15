@@ -10,7 +10,7 @@
  docker run --rm -v c:/Users:/data alpine ls /data
 ```
  
-# RUN
+# RUN from powershell
 -rebuild master and slave postgres environment:
 ```
 ./db_start.ps1    
@@ -89,3 +89,7 @@ pg_dump -U postgres -p 5432 db >> /prj/db.bak --schema-only
 psql -U postgres  -c "CREATE DATABASE tests1;"
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" -d "tests1" < /prj/db.bak
 ```
+
+# Software can be download here: 
+- Postgres 14.5 for Windows https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+- AWS Schema Conversion Tool https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_Installing.html#CHAP_Installing.Procedure

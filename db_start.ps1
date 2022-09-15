@@ -17,7 +17,7 @@ if([string]::IsNullOrEmpty($ResultSearch)){
 
 }
 if($IsRecompileImage){
-	#docker rmi postgressource -f   #- base image
+	docker rmi postgressource -f   #- base image
 	docker rmi postgrestest -f
 	docker rmi postgresone -f
 	docker rmi postgrestwo -f
@@ -62,6 +62,26 @@ for ($i=0; $i -lt $Files.count; $i++){
 
 Copy-Item -Path $OutputDumpFile -Destination $OutputDumpMirrorFile
 
+#UnitTest
+$SourceDBFolder = Convert-Path .
+$OutputDumpFile = $SourceDBFolder + "\dc_postgres\master_unit_test.sql"
+$SourceDBFolder = $SourceDBFolder + "\DBSource\UnitTest"
+
+Remove-Item -Path $OutputDumpFile -Force -ErrorAction SilentlyContinue
+
+Write-Host "Build DB dump script from folder: "$SourceDBFolder" to file "$OutputDumpFile
+$FileFilter = "???_*.sql"
+Write-Host "Source file filter: "$FileFilter
+Get-ChildItem $SourceDBFolder -Attributes !Directory
+$Files = Get-ChildItem $SourceDBFolder -Attributes !Directory -Filter $FileFilter
+for ($i=0; $i -lt $Files.count; $i++){
+	$SqlFile = $SourceDBFolder+"\"+$Files[$i]
+	$error.Clear()
+	$LASTEXITCODE = 0
+	Write-Host "Step"$i": "$SqlFile
+	Get-Content $SqlFile | Out-File -FilePath $OutputDumpFile -Encoding "UTF8" -Append
+}
+
 
 #Check docker folder sharing
 $Projectpath = Convert-Path .
@@ -104,7 +124,7 @@ if(-Not $IsMaserOnly){
 
 
 $ResultSearch = docker image ls | Select-String -Pattern "postgressource"
-if([string]::IsNullOrEmpty($ResultSearch)){
+if([string]::IsNullOrEmpty($ResultSearch) ){
 	cd source
 	docker build -f Dockerfile --rm -t postgressource . --progress=plain
 	cd ..

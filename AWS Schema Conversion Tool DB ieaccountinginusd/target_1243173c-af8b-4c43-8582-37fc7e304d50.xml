@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <complex-attributes>
+        <type name="view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="function">
+            <attr name="comment"></attr>
+            <attr name="sql"></attr>
+        </type>
+        <type name="trigger">
+            <attr name="sql"></attr>
+        </type>
+        <type name="procedure">
+            <attr name="comment"></attr>
+            <attr name="sql"></attr>
+        </type>
+    </complex-attributes>
+    <metadata _I_D="8d24be57-6b5d-4c00-94e3-39e1121b23d1" vendor="AURORA_MYSQL" name="&lt;Aurora_MySQL (virtual)&gt;" synthetic="true" metaStorageUuid="1243173c-af8b-4c43-8582-37fc7e304d50"/>
+</tree>

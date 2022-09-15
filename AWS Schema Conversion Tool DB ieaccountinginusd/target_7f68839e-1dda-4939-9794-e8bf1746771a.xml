@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <complex-attributes>
+        <type name="metadata">
+            <attr name="vendor-engine"></attr>
+        </type>
+        <type name="view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="user-defined-type">
+            <attr name="sql"></attr>
+        </type>
+        <type name="table-valued-function">
+            <attr name="sql"></attr>
+        </type>
+        <type name="assembly-file">
+            <attr name="content"></attr>
+        </type>
+        <type name="database-trigger">
+            <attr name="sql"></attr>
+        </type>
+        <type name="inline-function">
+            <attr name="sql"></attr>
+        </type>
+        <type name="aggregate-function">
+            <attr name="sql"></attr>
+        </type>
+        <type name="scalar-function">
+            <attr name="sql"></attr>
+        </type>
+        <type name="server-trigger">
+            <attr name="sql"></attr>
+        </type>
+        <type name="trigger">
+            <attr name="sql"></attr>
+        </type>
+        <type name="procedure">
+            <attr name="sql"></attr>
+        </type>
+    </complex-attributes>
+    <metadata _I_D="ba4b4c64-2dc7-4bb4-bddf-e1febafba4ce" vendor="MSSQL" name="&lt;MSSQL (virtual)&gt;" synthetic="true" metaStorageUuid="7f68839e-1dda-4939-9794-e8bf1746771a" treat-case-sensitive="NO"/>
+</tree>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <complex-attributes>
+        <type name="view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="function">
+            <attr name="comment"></attr>
+            <attr name="sql"></attr>
+        </type>
+        <type name="trigger">
+            <attr name="sql"></attr>
+        </type>
+        <type name="procedure">
+            <attr name="comment"></attr>
+            <attr name="sql"></attr>
+        </type>
+    </complex-attributes>
+    <metadata _I_D="d5986998-02b6-4c0e-8237-bcf5e879cb30" vendor="MYSQL" name="&lt;MySQL (virtual)&gt;" synthetic="true" metaStorageUuid="cdf3b8de-569d-4b0a-a126-f4ddaf7f02f2"/>
+</tree>

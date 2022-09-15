@@ -21,11 +21,12 @@ apk add postgresql-dev
 
 RUN pip install --upgrade pip 
 RUN apk add alpine-sdk 
-RUN cat /proc/version
 RUN apk add zlib-dev
 RUN apk add lz4-dev 
 RUN apk add gawk
 RUN pip install pgxnclient
-RUN pgxn install pg_repack 
+RUN pgxn install pg_repack
+RUN apk add postgresql-plpython3 
+RUN pip install requests
 
 

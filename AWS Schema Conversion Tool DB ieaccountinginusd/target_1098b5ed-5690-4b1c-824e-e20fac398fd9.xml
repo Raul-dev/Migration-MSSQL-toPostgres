@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <complex-attributes>
+        <type name="materialized-view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="metadata">
+            <attr name="vendor-engine"></attr>
+        </type>
+        <type name="function">
+            <attr name="sql"></attr>
+        </type>
+        <type name="constraint">
+            <attr name="check-clause"></attr>
+        </type>
+        <type name="trigger">
+            <attr name="trigger-definition"></attr>
+            <attr name="comment"></attr>
+            <attr name="sql"></attr>
+        </type>
+        <type name="procedure">
+            <attr name="sql"></attr>
+        </type>
+    </complex-attributes>
+    <metadata _I_D="01129146-28ff-41e0-9db6-ca00804a86b6" vendor="POSTGRESQL" name="&lt;PostgreSQL (virtual)&gt;" synthetic="true" metaStorageUuid="1098b5ed-5690-4b1c-824e-e20fac398fd9"/>
+</tree>

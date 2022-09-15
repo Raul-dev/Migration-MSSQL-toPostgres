@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <complex-attributes>
+        <type name="materialized-view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="metadata">
+            <attr name="vendor-engine"></attr>
+        </type>
+        <type name="view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="function">
+            <attr name="sql"></attr>
+        </type>
+        <type name="constraint">
+            <attr name="check-clause"></attr>
+        </type>
+        <type name="procedure">
+            <attr name="sql"></attr>
+        </type>
+    </complex-attributes>
+    <metadata _I_D="d7d61df8-ad1f-4b12-b5ae-0e3cd8e0a987" vendor="REDSHIFT" name="&lt;Redshift (virtual)&gt;" synthetic="true" metaStorageUuid="b08f1253-75d9-4fad-97f9-dec8ac1fd7ac"/>
+</tree>

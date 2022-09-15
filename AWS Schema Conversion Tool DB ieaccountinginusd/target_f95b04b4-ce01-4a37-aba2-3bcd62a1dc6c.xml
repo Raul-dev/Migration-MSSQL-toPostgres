@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+    <complex-attributes>
+        <type name="materialized-view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="metadata">
+            <attr name="vendor-engine"></attr>
+        </type>
+        <type name="view">
+            <attr name="sql"></attr>
+        </type>
+        <type name="function">
+            <attr name="sql"></attr>
+        </type>
+        <type name="constraint">
+            <attr name="check-clause"></attr>
+        </type>
+        <type name="procedure">
+            <attr name="sql"></attr>
+        </type>
+    </complex-attributes>
+    <metadata _I_D="36212353-1977-4d45-8881-2cc5943b8f2c" vendor="REDSHIFT" name="&lt;Redshift + Glue (virtual)&gt;" synthetic="true" metaStorageUuid="f95b04b4-ce01-4a37-aba2-3bcd62a1dc6c" vendor-related="GLUE">
+        <server _I_D="a0cd5513-a8dd-4d37-a140-c4f9f7ce8c06" vendor="REDSHIFT" synthetic="true" name="&lt;Redshift (virtual)&gt;"/>
+        <server _I_D="4eadc79d-b186-4da5-8888-99824872d021" vendor="GLUE" synthetic="true" name="&lt;Glue (virtual)&gt;"/>
+    </metadata>
+</tree>

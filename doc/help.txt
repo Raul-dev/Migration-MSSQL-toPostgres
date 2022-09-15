@@ -11,3 +11,14 @@ apk add lz4-dev
 apk add gawk
 
 not need #ENV PG_CONFIG=/usr/local/bin/pg_config 
+
+Calling RESTful Web Services from PostgreSQL procedure/function
+https://stackoverflow.com/questions/46540352/calling-restful-web-services-from-postgresql-procedure-function
+
+plpython2u extension
+ import requests, json
+ or
+ import urllib2
+https://stackoverflow.com/questions/26091390/postgresql-how-to-install-plpythonu-extension
+ 1) SELECT name, default_version, installed_version FROM pg_available_extensions WHERE name LIKE('plpy*')
+ select * from pg_language;
