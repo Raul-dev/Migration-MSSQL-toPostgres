@@ -14,20 +14,6 @@ AS $function$
 $function$
 ;
 
- CREATE OR REPLACE FUNCTION public.py_pgrest(p_url text, p_method text DEFAULT 'GET'::text, p_data text DEFAULT ''::text, p_headers text DEFAULT '{"Content-Type": "application/json"}'::text)
- RETURNS text
- LANGUAGE plpython3u
-AS $function$
-    import requests, json
-    try:
-        r = requests.request(method=p_method, url=p_url, data=p_data, headers=json.loads(p_headers))
-    except Exception as e:
-        return e
-    else:
-        return r.content
-$function$
-;
-
 
 CREATE OR REPLACE PROCEDURE upload.upl_cbrusdrate(IN par_fromdate TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL, IN par_todate TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL, INOUT par_errmessage TEXT DEFAULT NULL, INOUT return_code int DEFAULT 0)
 AS 

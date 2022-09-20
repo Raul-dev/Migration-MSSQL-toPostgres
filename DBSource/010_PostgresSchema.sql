@@ -257,7 +257,7 @@ CREATE TABLE upload.incomebook(
     id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
     date TIMESTAMP WITHOUT TIME ZONE,
     incomeusd NUMERIC(19,4),
-    exchangedata TIMESTAMP WITHOUT TIME ZONE,
+    exchangedate TIMESTAMP WITHOUT TIME ZONE,
     exchangevalue NUMERIC(19,4),
     exchangerate NUMERIC(19,4)
 )

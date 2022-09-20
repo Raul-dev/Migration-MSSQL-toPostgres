@@ -28,5 +28,6 @@ RUN pip install pgxnclient
 RUN pgxn install pg_repack
 RUN apk add postgresql-plpython3 
 RUN pip install requests
+RUN pip install openpyxl
 
 

@@ -22,3 +22,6 @@ plpython2u extension
 https://stackoverflow.com/questions/26091390/postgresql-how-to-install-plpythonu-extension
  1) SELECT name, default_version, installed_version FROM pg_available_extensions WHERE name LIKE('plpy*')
  select * from pg_language;
+
+Import Excel file
+ https://questu.ru/questions/20039856/

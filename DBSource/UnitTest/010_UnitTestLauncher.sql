@@ -28,6 +28,15 @@ begin
 		raise notice 'RESTapi_and_Python Successfully completed!!';
 	end if;
 	v_counter := v_counter + 1;
+	
+	v_res_test := uts.ExcelFile_Upload();
+	if not v_res_test then
+		raise notice 'ExcelFile_Upload failed';
+		return false;
+	else 
+		raise notice 'ExcelFile_Upload Successfully completed!!';
+	end if;
+	v_counter := v_counter + 1;
 
 	return true;
 end;
