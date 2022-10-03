@@ -25,3 +25,19 @@ https://stackoverflow.com/questions/26091390/postgresql-how-to-install-plpythonu
 
 Import Excel file
  https://questu.ru/questions/20039856/
+
+ ODBC
+ https://www.sqlshack.com/configure-odbc-drivers-for-postgresql/
+ https://learn.microsoft.com/en-us/powershell/module/wdac/add-odbcdsn?view=windowsserver2022-ps
+ Devart ODBC Driver for PostgreSQL
+Name       : MSSQL_postgres
+DsnType    : User
+Platform   : 32/64-bit
+DriverName : Devart ODBC Driver for PostgreSQL
+Attribute  : {User ID, Port, Database, Password...}
+
+How can I detect if a Postgres temporary table already exists?
+https://stackoverflow.com/questions/11224806/how-can-i-detect-if-a-postgres-temporary-table-already-exists
+
+Creating a date dimension table in PostgreSQL
+https://duffn.medium.com/creating-a-date-dimension-table-in-postgresql-af3f8e2941ac

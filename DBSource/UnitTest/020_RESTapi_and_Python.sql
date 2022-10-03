@@ -5,13 +5,12 @@ CREATE OR REPLACE FUNCTION uts.RESTapi_and_Python()
  SECURITY DEFINER
 AS $function$
 DECLARE 
-DECLARE
 var_fromdate TIMESTAMP;
 var_todate TIMESTAMP;
-var_errmessage text;
+var_errmessage VARCHAR;
 return_code int;
 var_OverridePrintEnabling NUMERIC(1, 0);
-var_AuditMessage TEXT;
+var_AuditMessage VARCHAR;
 sp_print$ReturnCode INTEGER;
 var_AVGUSD double precision;
 BEGIN

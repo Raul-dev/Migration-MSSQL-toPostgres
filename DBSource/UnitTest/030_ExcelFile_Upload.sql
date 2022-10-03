@@ -5,7 +5,6 @@ CREATE OR REPLACE FUNCTION uts.ExcelFile_Upload()
  SECURITY DEFINER
 AS $function$
 DECLARE 
-DECLARE
 var_ExcelFile VARCHAR;
 var_errmessage VARCHAR;
 return_code INT;

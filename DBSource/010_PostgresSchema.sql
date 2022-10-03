@@ -101,7 +101,7 @@ CREATE TABLE uts."GroupType" (
 
 
 CREATE TABLE audit.logprocedures(
-    logid BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
+    logid BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     mainid BIGINT,
     parentid BIGINT,
     starttime TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT clock_timestamp(),
@@ -123,7 +123,7 @@ CREATE TABLE audit.logprocedures(
         );
 
 CREATE TABLE dbo.dimbatch(
-    batchid INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+    batchid INTEGER NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     dateid INTEGER,
     createdate TIMESTAMP WITHOUT TIME ZONE
 )
@@ -132,7 +132,7 @@ CREATE TABLE dbo.dimbatch(
         );
 
 CREATE TABLE dbo.dimdate(
-    dateid INTEGER NOT NULL,
+    dateid INTEGER NOT NULL PRIMARY KEY,
     fulldatealternatekey DATE NOT NULL,
     daynumberofyear SMALLINT NOT NULL,
     daynumberofmonth SMALLINT NOT NULL,
@@ -155,17 +155,18 @@ CREATE TABLE dbo.dimdate(
         );
 
 CREATE TABLE dbo.dimexchrateusd(
-    dateid INTEGER NOT NULL,
+    dateid INTEGER NOT NULL PRIMARY KEY,
     batchid INTEGER,
     exchangerates NUMERIC(19,4) NOT NULL,
-    createdate TIMESTAMP WITHOUT TIME ZONE
+    createdate TIMESTAMP WITHOUT TIME ZONE,
+    iscopy BOOLEAN DEFAULT true NOT NULL 
 )
         WITH (
         OIDS=FALSE
         );
 
 CREATE TABLE dbo.factincome(
-    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+    id INTEGER NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     dateid INTEGER,
     batchid INTEGER,
     incomevalue NUMERIC(19,4),
@@ -176,7 +177,7 @@ CREATE TABLE dbo.factincome(
         );
 
 CREATE TABLE dbo.factincomehistory(
-    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+    id INTEGER NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     dateid INTEGER,
     batchid INTEGER,
     incomeusd NUMERIC(19,4),
@@ -185,6 +186,7 @@ CREATE TABLE dbo.factincomehistory(
     exchangedateid INTEGER,
     exchangevalue NUMERIC(19,4),
     exchangerate NUMERIC(19,4),
+    lotorder INTEGER,
     endbatchid INTEGER,
     createdate TIMESTAMP WITHOUT TIME ZONE,
     changedate TIMESTAMP WITHOUT TIME ZONE
@@ -194,7 +196,7 @@ CREATE TABLE dbo.factincomehistory(
         );
 
 CREATE TABLE meta.configapp(
-    parameter VARCHAR(128) NOT NULL,
+    parameter VARCHAR(128) NOT NULL PRIMARY KEY,
     strvalue VARCHAR(256)
 )
         WITH (
@@ -227,7 +229,8 @@ CREATE TABLE staging.factincomehistory(
     exchangedateid INTEGER,
     exchangevalue NUMERIC(19,4),
     exchangerate NUMERIC(19,4),
-    endbatchid INTEGER
+    endbatchid INTEGER,
+    lotorder INTEGER
 )
         WITH (
         OIDS=FALSE
@@ -286,7 +289,7 @@ SELECT
     GROUP BY calendaryear, calendarquarter;
 
 -- ------------ Write CREATE-CONSTRAINT-stage scripts -----------
-
+/*
 ALTER TABLE audit.logprocedures
 ADD CONSTRAINT pk_audit_logprocedures_677577452 PRIMARY KEY (logid);
 
@@ -307,6 +310,7 @@ ADD CONSTRAINT pk_factincomehistory_853578079 PRIMARY KEY (id);
 
 ALTER TABLE meta.configapp
 ADD CONSTRAINT pk_audit_logprocedures_917578307 PRIMARY KEY (parameter);
+*/
 
 ALTER TABLE upload.currencyperiod
 ADD CONSTRAINT pk_currencyperiod_645577338 PRIMARY KEY (id);

@@ -61,7 +61,7 @@ EOWARN
 		
 
 psql -v ON_ERROR_STOP=1 -h 172.30.10.2 --username "$POSTGRES_USER" --dbname $DB_NAME  <<-EOSQL
-select uts.ut_unitest();
+CALL uts.ut_unitest();
 
 EOSQL
 

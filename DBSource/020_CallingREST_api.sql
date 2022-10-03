@@ -15,7 +15,7 @@ $function$
 ;
 
 
-CREATE OR REPLACE PROCEDURE upload.upl_cbrusdrate(IN par_fromdate TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL, IN par_todate TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL, INOUT par_errmessage TEXT DEFAULT NULL, INOUT return_code int DEFAULT 0)
+CREATE OR REPLACE PROCEDURE upload.upl_cbrusdrate(IN par_fromdate TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL, IN par_todate TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL, INOUT par_errmessage VARCHAR DEFAULT NULL, INOUT return_code int DEFAULT 0)
 AS 
 $BODY$
 /*
@@ -142,7 +142,7 @@ BEGIN
         END IF;
         var_AuditMessage := '[upload].[upl_CbrUsdRate];@RowCount=' || LTRIM(to_char(COALESCE(var_RowCount, 0)::DOUBLE PRECISION, '9999999999')) || ' finish';
         CALL audit.sp_print(var_AuditMessage, var_OverridePrintEnabling, return_code => sp_print$ReturnCode);
-        CALL audit.sp_auditfinish(par_LogID := var_LogID, par_RecordCount := var_RowCount, return_code => sp_auditfinish$ReturnCode);
+        --CALL audit.sp_auditfinish(par_LogID := var_LogID, par_RecordCount := var_RowCount, return_code => sp_auditfinish$ReturnCode);
         EXCEPTION
             WHEN OTHERS THEN
                 error_catch$ERROR_NUMBER := '0';
