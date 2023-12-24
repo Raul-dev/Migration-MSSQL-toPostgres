@@ -4,7 +4,7 @@ Param
 	[parameter(Mandatory=$false)][bool]$IsMaserOnly=$false
 )
 
-$res =Get-Process 'com.docker.proxy' -ErrorAction SilentlyContinue
+$res =Get-Process 'com.docker.build' -ErrorAction SilentlyContinue
 if([string]::IsNullOrEmpty($res)){
 	Write-Host "DOCKER is not running. Visit and download https://docs.docker.com/docker-for-windows/install/ " -fore red
 	exit -1

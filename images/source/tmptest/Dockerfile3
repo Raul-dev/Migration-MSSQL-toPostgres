@@ -1,0 +1,80 @@
+FROM postgressource
+ENV PG_VER=16.1
+ENV PG_MAJOR 16
+
+USER root
+
+#Fix ref deb postgres lib
+RUN apt install -y postgresql-common
+RUN /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+RUN apt-get install -y --no-install-recommends htop 
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install -y curl ca-certificates
+RUN install -d /usr/share/postgresql-common/pgdg
+RUN curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+RUN apt update -y
+RUN apt upgrade -y
+#RUN apt install -y postgresql-contrib-16
+
+
+#Added other extension
+#RUN apt-get install -y wget
+#RUN wget https://ftp.sjtu.edu.cn/sites/archive.ubuntu.com/pool/main/p/postgresql-16/postgresql-plpython3-16_16.1-1_amd64.deb
+#RUN apt install /postgresql-plpython3-16_16.1-1_amd64.deb
+#https://wiki.postgresql.org/wiki/Apt
+
+RUN rm -rf /usr/local/bin/docker-enforce-initdb.sh
+COPY docker-entrypoint.sh docker-ensure-initdb.sh /usr/local/bin/
+RUN ln -sT docker-ensure-initdb.sh /usr/local/bin/docker-enforce-initdb.sh
+
+#RUN apt-get install -y --no-install-recommends postgresql-plpython3-16
+RUN apt-get update
+RUN apt-get install -y pgxnclient
+#RUN apt install -y py3-setuptools
+RUN apt install -y python3-pip
+#RUN pip install --upgrade pip 
+#RUN apk add alpine-sdk 
+#RUN apk add zlib-dev
+#RUN apk add lz4-dev 
+#RUN apk add gawk
+#RUN pip install pgxnclient
+#RUN pgxn install pg_repack
+#RUN apt install pg_repack
+#RUN pip install requests
+#RUN pip install openpyxl
+
+#apt-get install -y make unzip gcc libssl-dev zlib1g-dev liblz4-dev libreadline-dev libzstd-dev
+#wget -q -O pg_repack.zip "https://api.pgxn.org/dist/pg_repack/1.5.0/pg_repack-1.5.0.zip"
+#unzip pg_repack.zip && rm pg_repack.zip
+#cd pg_repack-*
+#make && make install
+#cd ..
+#rm -rf pg_repack-*
+#apt-get remove --auto-remove -y make unzip gcc libssl-dev zlib1g-dev libreadline-dev libzstd-dev
+
+#pip install pgxnclient --break-system-packages
+#Rabotalo
+#RUN	apt-get install -y postgresql-contrib
+RUN	pip install openpyxl --break-system-packages
+RUN	pip install requests --break-system-packages
+RUN apt install -y postgresql-contrib-16
+
+RUN	sed -ri "s!^#?(listen_addresses)\s*=\s*\S+.*!\1 = '*'!" /usr/lib/postgresql/${PG_MAJOR}/share/postgresql.conf.sample
+#grep -F "listen_addresses = '*'" /usr/lib/postgresql/16/share/postgresql.conf.sample
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+STOPSIGNAL SIGINT
+#
+# An additional setting that is recommended for all users regardless of this
+# value is the runtime "--stop-timeout" (or your orchestrator/runtime's
+# equivalent) for controlling how long to wait between sending the defined
+# STOPSIGNAL and sending SIGKILL (which is likely to cause data corruption).
+#
+# The default in most runtimes (such as Docker) is 10 seconds, and the
+# documentation at https://www.postgresql.org/docs/12/server-start.html notes
+# that even 90 seconds may not be long enough in many instances.
+
+EXPOSE 5432
+CMD ["postgres"]

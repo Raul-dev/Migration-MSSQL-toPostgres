@@ -3,12 +3,12 @@ services:
   source:
     image: postgressource
     build:
-      context: ./source
+      context: ./images/source
     entrypoint: ["echo", "Service postgresprepared disabled"]
   postgrestest:
     image: ${DOCKER_REGISTRY-}postgrestest
     build:
-      context: ./testdb
+      context: ./images/testdb
     container_name: postgres-test
     networks:
       static-network:
@@ -19,10 +19,11 @@ services:
       - ./dc_postgres:/prj
     depends_on:
       - postgrestwo
+
   postgresone:
     image: ${DOCKER_REGISTRY-}postgresone
     build:
-      context: ./master
+      context: /images/master
     restart: unless-stopped
     container_name: postgres-master
     networks:
@@ -30,9 +31,17 @@ services:
         ipv4_address: 172.30.10.2
     ports:
       - '54321:5432'
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 10s
+      retries: 120
     environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${PASSWORD_DB:-postgres}
       - PG_CONFIG=/usr/local/bin/
       - DB_NAME=ieaccountinginusd
+      
     expose:
       # Opens port 5432 on the container
       - '5432'
@@ -44,7 +53,7 @@ services:
   postgrestwo:
     image: ${DOCKER_REGISTRY-}postgrestwo
     build:
-      context: ./slave
+      context: ./images/slave
     restart: unless-stopped
     container_name: postgres-slave
     networks:
@@ -52,7 +61,14 @@ services:
         ipv4_address: 172.30.10.4
     ports:
       - '54322:5432'
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 10s
+      retries: 120
     environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${PASSWORD_DB:-postgres}      
       - DB_NAME=ieaccountinginusd      
     expose:
       - '5432'

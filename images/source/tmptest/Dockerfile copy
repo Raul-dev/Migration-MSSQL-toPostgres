@@ -1,0 +1,117 @@
+
+RUN apt install -y postgresql-common
+RUN /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+RUN apt-get install -y --no-install-recommends htop 
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install -y curl ca-certificates
+RUN install -d /usr/share/postgresql-common/pgdg
+RUN curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+RUN apt update -y
+RUN apt upgrade -y
+#RUN apt install -y postgresql-contrib-16
+
+
+
+#Added other extension
+#ENV POSTGIS_MAJOR 3
+#ENV POSTGIS_VERSION 3.3.3+dfsg-1.pgdg110+1
+RUN apt install -y wget
+RUN wget https://postgis.net/stuff/postgis-3.4.2dev.tar.gz
+RUN tar -xvzf postgis-3.4.2dev.tar.gz
+RUN cd postgis-3.4.2dev && \
+	./configure && \
+	make && \
+	make install 
+
+RUN rm -rf postgis-3.4.2dev.tar.gz
+RUN apt-get install -y --no-install-recommends \
+    htop 
+RUN apt-get install -y software-properties-common
+apt-cache showpkg postgresql-plpython3-16
+#RUN apt-get update \
+#      && apt-cache showpkg postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR 
+#--fix-missing      
+#RUN apt-get install -y --no-install-recommends  \
+#           postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR=$POSTGIS_VERSION 
+#RUN apt-get install -y --no-install-recommends  \           
+#           postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR-scripts=$POSTGIS_VERSION 
+#RUN apt-get install -y --no-install-recommends  \           
+#           postgis=$POSTGIS_VERSION 
+#RUN add-apt-repository universe
+RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list
+RUN sed -i "/^# deb.*universe/ s/^# //" /etc/apt/sources.list
+RUN apt-get update 
+RUN apt-get install -y --no-install-recommends postgresql-plpython3-16
+apt install -y postgresql-plpython3-16
+apt-get install wget ca-certificates
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+
+RUN apt-get install -y --no-install-recommends \        
+    python3
+
+RUN apt-get install -y --no-install-recommends \        
+    python3-asyncpg
+
+apt install -y postgresql-plpython3-15
+apt-get install -y --no-install-recommends "postgresql-plpython-16"
+
+FROM postgressource
+ENV PG_VER=16.1
+ENV PG_MAJOR 16
+RUN sed -ri "s!^#?(listen_addresses)\s*=\s*\S+.*!\1 = '*'!" /usr/lib/postgresql/16/share/postgresql.conf.sample
+
+USER root
+
+#Added other extension
+RUN apt-get install -y --no-install-recommends \
+    htop 
+RUN apt-get install -y software-properties-common
+
+#RUN add-apt-repository universe
+RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list
+RUN sed -i "/^# deb.*universe/ s/^# //" /etc/apt/sources.list
+RUN apt-get update 
+
+
+RUN apt-get install -y --no-install-recommends python3
+
+RUN apt-get install -y --no-install-recommends python3-asyncpg
+#apt list --installed
+#RUN apt-get install -y --no-install-recommends postgresql-plpython3-16
+#wget http://ports.ubuntu.com/pool/main/p/postgresql-16/postgresql-plpython3-16_16.1-1_arm64.deb
+wget https://ftp.sjtu.edu.cn/sites/archive.ubuntu.com/pool/main/p/postgresql-16/postgresql-plpython3-16_16.1-1_amd64.deb
+wget https://ftp.sjtu.edu.cn/sites/archive.ubuntu.com/pool/main/p/postgresql-16/postgresql-client-16_16.1-1_amd64.deb   
+dpkg -i postgresql-plpython3-16_16.1-1_arm64.deb
+apt install /postgresql-plpython3-16_16.1-1_amd64.deb
+apt install libpython3.11
+apt install postgresql-16
+apt install /postgresql-client-16_16.1-1_amd64.deb
+
+wget https://ftp.sjtu.edu.cn/sites/archive.ubuntu.com/pool/main/p/postgresql-16/libpq5_16.1-1_amd64.deb  
+apt install /libpq5_16.1-1_amd64.deb
+
+How to install libc6 (>= 2.38)
+apt install libpython3.11
+
+wget https://ftp.sjtu.edu.cn/sites/archive.ubuntu.com/pool/main/p/postgresql-16/postgresql-server-dev-16_16.1-1_amd64.deb 
+apt install /postgresql-server-dev-16_16.1-1_amd64.deb 
+
+wget https://ftp.sjtu.edu.cn/sites/archive.ubuntu.com/pool/main/p/postgresql-16/libpq-dev_16.1-1build1_amd64.deb  
+apt install /libpq-dev_16.1-1build1_amd64.deb  
+
+wget https://ftp.sjtu.edu.cn/sites/archive.ubuntu.com/pool/main/p/postgresql-16/libecpg-compat3_16.1-1_amd64.deb
+apt install /libecpg-compat3_16.1-1_amd64.deb
+libc6 (>= 2.38) but 2.31-13+deb11u7 is to be installed
+          Depends: libldap2 (>= 2.6.2) but it is not installable
+          Depends: libssl3
+
+RUN /bin/sh -c set -ex; export PYTHONDONTWRITEBYTECODE=1; dpkgArch="$(dpkg --print-architecture)"; 
+aptRepo="[ signed-by=/usr/local/share/keyrings/postgres.gpg.asc ] http://apt.postgresql.org/pub/repos/apt/ 
+bookworm-pgdg main $PG_MAJOR"; case "$dpkgArch" in amd64 | arm64 | ppc64el | s390x)
+ echo "deb $aptRepo" > /etc/apt/sources.list.d/pgdg.list; apt-get update; ;; *) 
+ echo "deb-src $aptRepo" > /etc/apt/sources.list.d/pgdg.list; savedAptMark="$(apt-mark showmanual)"; 
+ tempDir="$(mktemp -d)"; cd "$tempDir"; apt-get update; 
+ apt-get install -y --no-install-recommends dpkg-dev; 
+ echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; _update_repo() { dpkg-scanpackages . > Packages; apt-get -o Acquire::GzipIndexes=false update; }; _update_repo; nproc="$(nproc)"; export DEB_BUILD_OPTIONS="nocheck parallel=$nproc"; apt-get build-dep -y postgresql-common pgdg-keyring; apt-get source --compile postgresql-common pgdg-keyring; _update_repo; apt-get build-dep -y "postgresql-$PG_MAJOR=$PG_VERSION"; apt-get source --compile "postgresql-$PG_MAJOR=$PG_VERSION"; apt-mark showmanual | xargs apt-mark auto > /dev/null; apt-mark manual $savedAptMark; ls -lAFh; _update_repo; grep '^Package: ' Packages; cd /; ;; esac; apt-get install -y --no-install-recommends postgresql-common; sed -ri 's/#(create_main_cluster) .*$/\1 = false/' /etc/postgresql-common/createcluster.conf; apt-get install -y --no-install-recommends "postgresql-$PG_MAJOR=$PG_VERSION" ; rm -rf /var/lib/apt/lists/*; if [ -n "$tempDir" ]; then apt-get purge -y --auto-remove; rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; fi; find /usr -name '*.pyc' -type f -exec bash -c 'for pyc; do dpkg -S "$pyc" &> /dev/null || rm -vf "$pyc"; done' -- '{}' +; postgres --version # buildkit          

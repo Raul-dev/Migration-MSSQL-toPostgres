@@ -1,5 +1,5 @@
 # System Requirements
-- Windows 10 64-bit: Pro, Enterprise, or Education (Build 15063 or later).
+- Windows 10 64-bit: Pro, Enterprise, or Education (build 19044 or later).
 - Hyper-V and Containers Windows features must be enabled.
 	
 # Install docker 
@@ -8,6 +8,10 @@
 3. Check docker setup
 ```
  docker run --rm -v c:/Users:/data alpine ls /data
+```
+4. Git clone without replacing LF by CRLF. Use option --config core.autocrlf=false 
+```
+git clone https://github.com/Raul-dev/Migration-MSSQL-toPostgres.git --config core.autocrlf=false 
 ```
  
 # RUN from powershell
@@ -40,6 +44,16 @@ port:   54322
 
 # Other cmd
 ```
+#build postgressource image from Postgresql source https://ftp.postgresql.org/pub/source/v16.1/
+cd ./images/source
+docker build --no-cache --progress=plain -t postgressource .
+docker build -f Dockerfile2 --no-cache --progress=plain -t postgressource2 .
+docker rmi postgressource
+docker run --name postgresres -p 54321:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -d postgressource
+docker rm postgresres
+docker logs postgresres
+docker run --rm -it --entrypoint sh postgressource2
+
 #restart slave DB server:
 docker exec -it postgres-slave gosu postgres pg_ctl restart
 exec cmd:
